@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface SBadge {
+    }
     interface SButton {
     }
     interface SCard {
@@ -16,6 +18,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLSBadgeElement extends Components.SBadge, HTMLStencilElement {
+    }
+    var HTMLSBadgeElement: {
+        prototype: HTMLSBadgeElement;
+        new (): HTMLSBadgeElement;
+    };
     interface HTMLSButtonElement extends Components.SButton, HTMLStencilElement {
     }
     var HTMLSButtonElement: {
@@ -35,12 +43,15 @@ declare global {
         new (): HTMLSInputElement;
     };
     interface HTMLElementTagNameMap {
+        "s-badge": HTMLSBadgeElement;
         "s-button": HTMLSButtonElement;
         "s-card": HTMLSCardElement;
         "s-input": HTMLSInputElement;
     }
 }
 declare namespace LocalJSX {
+    interface SBadge {
+    }
     interface SButton {
     }
     interface SCard {
@@ -52,6 +63,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
+        "s-badge": SBadge;
         "s-button": SButton;
         "s-card": SCard;
         "s-input": SInput;
@@ -61,6 +73,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "s-badge": LocalJSX.SBadge & JSXBase.HTMLAttributes<HTMLSBadgeElement>;
             "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;

@@ -1,0 +1,18 @@
+:host {
+  display: inline-block;
+  --background-color: deepskyblue;
+}
+
+#main-container {
+  box-sizing: border-box;
+  padding: .1rem .5rem;
+  background-color: var(--background-color);
+  user-select: none;
+  border-radius: 10px;
+  transition: all 300ms ease;
+}
+
+#main-container:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
