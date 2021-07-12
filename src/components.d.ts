@@ -9,6 +9,8 @@ export namespace Components {
     interface SButton {
     }
     interface SInput {
+        "placeholder": string;
+        "value": string;
     }
 }
 declare global {
@@ -33,6 +35,10 @@ declare namespace LocalJSX {
     interface SButton {
     }
     interface SInput {
+        "onSChange"?: (event: CustomEvent<string>) => void;
+        "onSInput"?: (event: CustomEvent<InputEvent>) => void;
+        "placeholder"?: string;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "s-button": SButton;
