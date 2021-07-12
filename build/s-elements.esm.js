@@ -1,0 +1,1 @@
+import{p as a,b as s}from"./p-7870af10.js";(()=>{const s=import.meta.url,p={};return""!==s&&(p.resourcesUrl=new URL(".",s).href),a(p)})().then((a=>s([["p-bfda2337",[[1,"s-badge"],[1,"s-button"],[1,"s-card"],[1,"s-input",{value:[1537],placeholder:[513]}]]]],a)));
