@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SButton {
     }
+    interface SInput {
+    }
 }
 declare global {
     interface HTMLSButtonElement extends Components.SButton, HTMLStencilElement {
@@ -16,15 +18,25 @@ declare global {
         prototype: HTMLSButtonElement;
         new (): HTMLSButtonElement;
     };
+    interface HTMLSInputElement extends Components.SInput, HTMLStencilElement {
+    }
+    var HTMLSInputElement: {
+        prototype: HTMLSInputElement;
+        new (): HTMLSInputElement;
+    };
     interface HTMLElementTagNameMap {
         "s-button": HTMLSButtonElement;
+        "s-input": HTMLSInputElement;
     }
 }
 declare namespace LocalJSX {
     interface SButton {
     }
+    interface SInput {
+    }
     interface IntrinsicElements {
         "s-button": SButton;
+        "s-input": SInput;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +44,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
+            "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
         }
     }
 }

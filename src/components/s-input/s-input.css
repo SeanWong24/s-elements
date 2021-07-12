@@ -1,0 +1,19 @@
+:host {
+  --border-color: lightgrey;
+  --highlight-color: deepskyblue;
+}
+
+input {
+  border: 1px solid var(--border-color);
+  outline: none;
+  height: 1.5rem;
+  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+  transition: all 300ms ease;
+}
+
+input:focus {
+  transform: scale(1.025);
+  border-radius: 5px;
+  border-bottom: 2px solid var(--highlight-color);
+}
