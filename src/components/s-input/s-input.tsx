@@ -17,6 +17,7 @@ export class SInput implements ComponentInterface {
     return (
       <Host>
         <input
+          id="native-element"
           value={this.value}
           placeholder={this.placeholder}
           onChange={event => this.sChange.emit((event.currentTarget as HTMLInputElement).value)}
