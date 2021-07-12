@@ -1,1 +1,1 @@
-import{p as a,b as s}from"./p-7870af10.js";(()=>{const s=import.meta.url,p={};return""!==s&&(p.resourcesUrl=new URL(".",s).href),a(p)})().then((a=>s([["p-bfda2337",[[1,"s-badge"],[1,"s-button"],[1,"s-card"],[1,"s-input",{value:[1537],placeholder:[513]}]]]],a)));
+import{p as e,b as s}from"./p-27eacd61.js";(()=>{const s=import.meta.url,a={};return""!==s&&(a.resourcesUrl=new URL(".",s).href),e(a)})().then((e=>s([["p-8ab7101c",[[1,"s-badge"],[1,"s-button"],[1,"s-card"],[1,"s-input",{value:[1537],placeholder:[513]}],[1,"s-toggle",{checked:[1028]}]]]],e)));
