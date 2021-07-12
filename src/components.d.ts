@@ -16,6 +16,9 @@ export namespace Components {
         "placeholder": string;
         "value": string;
     }
+    interface SToggle {
+        "checked": boolean;
+    }
 }
 declare global {
     interface HTMLSBadgeElement extends Components.SBadge, HTMLStencilElement {
@@ -42,11 +45,18 @@ declare global {
         prototype: HTMLSInputElement;
         new (): HTMLSInputElement;
     };
+    interface HTMLSToggleElement extends Components.SToggle, HTMLStencilElement {
+    }
+    var HTMLSToggleElement: {
+        prototype: HTMLSToggleElement;
+        new (): HTMLSToggleElement;
+    };
     interface HTMLElementTagNameMap {
         "s-badge": HTMLSBadgeElement;
         "s-button": HTMLSButtonElement;
         "s-card": HTMLSCardElement;
         "s-input": HTMLSInputElement;
+        "s-toggle": HTMLSToggleElement;
     }
 }
 declare namespace LocalJSX {
@@ -62,11 +72,16 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "value"?: string;
     }
+    interface SToggle {
+        "checked"?: boolean;
+        "onSChange"?: (event: CustomEvent<boolean>) => void;
+    }
     interface IntrinsicElements {
         "s-badge": SBadge;
         "s-button": SButton;
         "s-card": SCard;
         "s-input": SInput;
+        "s-toggle": SToggle;
     }
 }
 export { LocalJSX as JSX };
@@ -77,6 +92,7 @@ declare module "@stencil/core" {
             "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
+            "s-toggle": LocalJSX.SToggle & JSXBase.HTMLAttributes<HTMLSToggleElement>;
         }
     }
 }
