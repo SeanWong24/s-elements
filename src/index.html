@@ -22,29 +22,47 @@
 </head>
 
 <body>
+  <h1>S-Elements</h1>
   <div>
-    <h1>Input</h1>
+    <s-toggle id="color-background-toggle"></s-toggle>
+    <label>Colorful Background</label>
+    <script>
+      document.querySelector('#color-background-toggle')
+        .addEventListener('sChange', toggleColorfulPageBackground);
+
+      function toggleColorfulPageBackground() {
+        const body = document.querySelector('body');
+        if (event.currentTarget.checked) {
+          body.classList.add('color-background');
+        } else {
+          body.classList.remove('color-background');
+        }
+      }
+    </script>
+  </div>
+  <div>
+    <h2>Input</h2>
     <s-input placeholder="Enter something..."></s-input>
   </div>
   <div>
-    <h1>Button</h1>
+    <h2>Button</h2>
     <s-button>Default</s-button>
     <s-button fill="outline">Outline</s-button>
     <s-button fill="clear">Clear</s-button>
   </div>
   <div>
-    <h1>Card</h1>
+    <h2>Card</h2>
     <s-card style="height: 150px; width: 150px;">
       <h3>Card Title</h3>
       <p>Card content...</p>
     </s-card>
   </div>
   <div>
-    <h1>Badge</h1>
+    <h2>Badge</h2>
     <s-badge>Test</s-badge>
   </div>
   <div>
-    <h1>Toggle</h1>
+    <h2>Toggle</h2>
     <div>
       <s-toggle scale=".75"></s-toggle>
       <label>Scale 0.75</label>
@@ -59,30 +77,14 @@
     </div>
   </div>
   <div>
-    <h1>Popover</h1>
+    <h2>Popover</h2>
     <s-popover>
       <h1>This is a popover</h1>
       <p>Some content here...</p>
-      <s-button onclick="toggleColorfulPageBackgroundAndPopover()">Toogle Colorful Page Background & Popover</s-button>
+      <s-button onclick="togglePopover()">Toogle Popover</s-button>
     </s-popover>
-    <s-button fill="outline" onclick="toggleColorfulPageBackgroundAndPopover()">Toogle Colorful Page Background &
-      Popover</s-button>
-    <script>
-      function toggleColorfulPageBackgroundAndPopover() {
-        toggleColorfulPageBackground();
-        togglePopover();
-      }
-
-      function toggleColorfulPageBackground() {
-        const body = document.querySelector('body');
-        if (body.classList.contains('color-background')) {
-          body.classList.remove('color-background');
-        } else {
-          body.classList.add('color-background');
-        }
-      }
-
-      function togglePopover() {
+    <s-button fill="outline" onclick="togglePopover()">Toogle Popover</s-button>
+    <script>function togglePopover() {
         const popover = document.querySelector('s-popover');
         popover.isHidden = !popover.isHidden;
       }
