@@ -9,6 +9,7 @@ export namespace Components {
     interface SBadge {
     }
     interface SButton {
+        "fill": 'default' | 'outline' | 'clear';
     }
     interface SCard {
     }
@@ -64,6 +65,7 @@ declare namespace LocalJSX {
     interface SBadge {
     }
     interface SButton {
+        "fill"?: 'default' | 'outline' | 'clear';
     }
     interface SCard {
     }
