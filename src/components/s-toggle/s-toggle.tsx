@@ -1,4 +1,4 @@
-import { Component, Host, h, Event, EventEmitter, Prop, ComponentInterface } from '@stencil/core';
+import { Component, Host, h, Event, EventEmitter, Prop, ComponentInterface, Watch, Element } from '@stencil/core';
 
 @Component({
   tag: 's-toggle',
@@ -7,9 +7,22 @@ import { Component, Host, h, Event, EventEmitter, Prop, ComponentInterface } fro
 })
 export class SToggle implements ComponentInterface {
 
+  @Element() hostElement: HTMLSToggleElement;
+
   @Prop({ mutable: true }) checked: boolean;
 
+  @Prop({ reflect: true }) scale = 1;
+
+  @Watch('scale')
+  scaleChanged(scale: number) {
+    this.updateCSSVariable('--scale', scale.toString());
+  }
+
   @Event() sChange: EventEmitter<boolean>;
+
+  connectedCallback() {
+    this.updateCSSVariable('--scale', this.scale.toString());
+  }
 
   render() {
     return (
@@ -24,6 +37,10 @@ export class SToggle implements ComponentInterface {
         />
       </Host>
     );
+  }
+
+  private updateCSSVariable(variableName: string, value: string) {
+    this.hostElement.style.setProperty(variableName, value);
   }
 
 }

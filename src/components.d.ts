@@ -18,6 +18,7 @@ export namespace Components {
     }
     interface SToggle {
         "checked": boolean;
+        "scale": number;
     }
 }
 declare global {
@@ -75,6 +76,7 @@ declare namespace LocalJSX {
     interface SToggle {
         "checked"?: boolean;
         "onSChange"?: (event: CustomEvent<boolean>) => void;
+        "scale"?: number;
     }
     interface IntrinsicElements {
         "s-badge": SBadge;
