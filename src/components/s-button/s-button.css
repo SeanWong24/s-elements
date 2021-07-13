@@ -8,6 +8,8 @@
 button {
   color: var(--color);
   background-color: var(--background-color);
+  height: 100%;
+  width: 100%;
   border: none;
   padding: 10px;
   cursor: pointer;
