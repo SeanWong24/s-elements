@@ -1,6 +1,7 @@
 :host {
-  display: inline-block;
   --background-color: deepskyblue;
+
+  display: inline-block;
 }
 
 #main-container {
@@ -13,6 +14,5 @@
 }
 
 #main-container:hover {
-  transform: scale(1.1);
   border-radius: 5px;
 }
