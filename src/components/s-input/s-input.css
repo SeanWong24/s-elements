@@ -1,6 +1,8 @@
 :host {
   --border-color: lightgrey;
   --highlight-color: deepskyblue;
+  
+  display: inline-block;
 }
 
 #native-element {
