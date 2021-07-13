@@ -7,6 +7,8 @@ import { Component, Host, h, ComponentInterface, Prop, Element, Watch } from '@s
 })
 export class SPopover implements ComponentInterface {
 
+  private readonly animationDuration = 500;
+
   private mainContainer: HTMLDivElement;
 
   @Element() hostElement: HTMLSPopoverElement;
@@ -19,13 +21,17 @@ export class SPopover implements ComponentInterface {
       this.mainContainer?.classList.add('minimized');
       setTimeout(() => {
         this.mainContainer?.classList.add('hidden');
-      }, 300); // TODO use const for the transition duration
+      }, this.animationDuration); // TODO use const for the transition duration
     } else {
       this.mainContainer?.classList.remove('hidden');
       setTimeout(() => {
         this.mainContainer?.classList.remove('minimized');
       });
     }
+  }
+
+  connectedCallback() {
+    this.updateCSSVariable('--animation-duration', `${this.animationDuration}ms`);
   }
 
   render() {
@@ -40,6 +46,10 @@ export class SPopover implements ComponentInterface {
         </div>
       </Host>
     );
+  }
+
+  private updateCSSVariable(variableName: string, value: string) {
+    this.hostElement.style.setProperty(variableName, value);
   }
 
 }
