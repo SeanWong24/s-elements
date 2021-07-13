@@ -10,6 +10,7 @@
 | Property  | Attribute | Description | Type      | Default     |
 | --------- | --------- | ----------- | --------- | ----------- |
 | `checked` | `checked` |             | `boolean` | `undefined` |
+| `scale`   | `scale`   |             | `number`  | `1`         |
 
 
 ## Events
