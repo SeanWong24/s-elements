@@ -8,6 +8,17 @@
 
   <script type="module" src="./build/s-elements.esm.js"></script>
   <script nomodule src="./build/s-elements.js"></script>
+
+  <style>
+    html {
+      min-height: 100%;
+    }
+
+    body.color-background {
+      background-color: #4158D0;
+      background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    }
+  </style>
 </head>
 
 <body>
@@ -46,6 +57,36 @@
       <s-toggle scale="1.5"></s-toggle>
       <label>Scale 1.5</label>
     </div>
+  </div>
+  <div>
+    <h1>Popover</h1>
+    <s-popover>
+      <h1>This is a popover</h1>
+      <p>Some content here...</p>
+      <s-button onclick="toggleColorfulPageBackgroundAndPopover()">Toogle Colorful Page Background & Popover</s-button>
+    </s-popover>
+    <s-button fill="outline" onclick="toggleColorfulPageBackgroundAndPopover()">Toogle Colorful Page Background &
+      Popover</s-button>
+    <script>
+      function toggleColorfulPageBackgroundAndPopover() {
+        toggleColorfulPageBackground();
+        togglePopover();
+      }
+
+      function toggleColorfulPageBackground() {
+        const body = document.querySelector('body');
+        if (body.classList.contains('color-background')) {
+          body.classList.remove('color-background');
+        } else {
+          body.classList.add('color-background');
+        }
+      }
+
+      function togglePopover() {
+        const popover = document.querySelector('s-popover');
+        popover.isHidden = !popover.isHidden;
+      }
+    </script>
   </div>
 </body>
 

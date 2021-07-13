@@ -17,6 +17,9 @@ export namespace Components {
         "placeholder": string;
         "value": string;
     }
+    interface SPopover {
+        "isHidden": boolean;
+    }
     interface SToggle {
         "checked": boolean;
         "scale": number;
@@ -47,6 +50,12 @@ declare global {
         prototype: HTMLSInputElement;
         new (): HTMLSInputElement;
     };
+    interface HTMLSPopoverElement extends Components.SPopover, HTMLStencilElement {
+    }
+    var HTMLSPopoverElement: {
+        prototype: HTMLSPopoverElement;
+        new (): HTMLSPopoverElement;
+    };
     interface HTMLSToggleElement extends Components.SToggle, HTMLStencilElement {
     }
     var HTMLSToggleElement: {
@@ -58,6 +67,7 @@ declare global {
         "s-button": HTMLSButtonElement;
         "s-card": HTMLSCardElement;
         "s-input": HTMLSInputElement;
+        "s-popover": HTMLSPopoverElement;
         "s-toggle": HTMLSToggleElement;
     }
 }
@@ -75,6 +85,9 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "value"?: string;
     }
+    interface SPopover {
+        "isHidden"?: boolean;
+    }
     interface SToggle {
         "checked"?: boolean;
         "onSChange"?: (event: CustomEvent<boolean>) => void;
@@ -85,6 +98,7 @@ declare namespace LocalJSX {
         "s-button": SButton;
         "s-card": SCard;
         "s-input": SInput;
+        "s-popover": SPopover;
         "s-toggle": SToggle;
     }
 }
@@ -96,6 +110,7 @@ declare module "@stencil/core" {
             "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
+            "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
             "s-toggle": LocalJSX.SToggle & JSXBase.HTMLAttributes<HTMLSToggleElement>;
         }
     }
