@@ -26,6 +26,8 @@ export namespace Components {
         "checked": boolean;
         "scale": number;
     }
+    interface SUi {
+    }
 }
 declare global {
     interface HTMLSBadgeElement extends Components.SBadge, HTMLStencilElement {
@@ -70,6 +72,12 @@ declare global {
         prototype: HTMLSToggleElement;
         new (): HTMLSToggleElement;
     };
+    interface HTMLSUiElement extends Components.SUi, HTMLStencilElement {
+    }
+    var HTMLSUiElement: {
+        prototype: HTMLSUiElement;
+        new (): HTMLSUiElement;
+    };
     interface HTMLElementTagNameMap {
         "s-badge": HTMLSBadgeElement;
         "s-button": HTMLSButtonElement;
@@ -78,6 +86,7 @@ declare global {
         "s-popover": HTMLSPopoverElement;
         "s-select": HTMLSSelectElement;
         "s-toggle": HTMLSToggleElement;
+        "s-ui": HTMLSUiElement;
     }
 }
 declare namespace LocalJSX {
@@ -104,6 +113,8 @@ declare namespace LocalJSX {
         "onSChange"?: (event: CustomEvent<boolean>) => void;
         "scale"?: number;
     }
+    interface SUi {
+    }
     interface IntrinsicElements {
         "s-badge": SBadge;
         "s-button": SButton;
@@ -112,6 +123,7 @@ declare namespace LocalJSX {
         "s-popover": SPopover;
         "s-select": SSelect;
         "s-toggle": SToggle;
+        "s-ui": SUi;
     }
 }
 export { LocalJSX as JSX };
@@ -125,6 +137,7 @@ declare module "@stencil/core" {
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
             "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
             "s-toggle": LocalJSX.SToggle & JSXBase.HTMLAttributes<HTMLSToggleElement>;
+            "s-ui": LocalJSX.SUi & JSXBase.HTMLAttributes<HTMLSUiElement>;
         }
     }
 }
