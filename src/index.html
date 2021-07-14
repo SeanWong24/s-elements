@@ -14,7 +14,23 @@
       min-height: 100%;
     }
 
-    body.color-background {
+    body {
+      background-color: rgb(230, 230, 230);
+    }
+
+    #page-wrap {
+      position: absolute;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 800px;
+      top: 0;
+      left: 50%;
+      padding: 1rem;
+      transform: translateX(-50%);
+      background-color: white;
+    }
+
+    #page-wrap.color-background {
       background-color: #4158D0;
       background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     }
@@ -22,81 +38,83 @@
 </head>
 
 <body>
-  <h1>S-Elements</h1>
-  <div>
-    <s-toggle id="color-background-toggle"></s-toggle>
-    <label>Colorful Background</label>
-    <script>
-      document.querySelector('#color-background-toggle')
-        .addEventListener('sChange', toggleColorfulPageBackground);
+  <div id="page-wrap">
+    <h1>S-Elements</h1>
+    <div>
+      <s-toggle id="color-background-toggle"></s-toggle>
+      <label>Colorful Background</label>
+      <script>
+        document.querySelector('#color-background-toggle')
+          .addEventListener('sChange', toggleColorfulPageBackground);
 
-      function toggleColorfulPageBackground() {
-        const body = document.querySelector('body');
-        if (event.currentTarget.checked) {
-          body.classList.add('color-background');
-        } else {
-          body.classList.remove('color-background');
+        function toggleColorfulPageBackground() {
+          const body = document.querySelector('#page-wrap');
+          if (event.currentTarget.checked) {
+            body.classList.add('color-background');
+          } else {
+            body.classList.remove('color-background');
+          }
         }
-      }
-    </script>
-  </div>
-  <div>
-    <h2>Input</h2>
-    <s-input placeholder="Enter something..."></s-input>
-  </div>
-  <div>
-    <h2>Button</h2>
-    <s-button>Default</s-button>
-    <s-button fill="outline">Outline</s-button>
-    <s-button fill="clear">Clear</s-button>
-  </div>
-  <div>
-    <h2>Card</h2>
-    <s-card style="height: 150px; width: 150px;">
-      <h3>Card Title</h3>
-      <p>Card content...</p>
-    </s-card>
-  </div>
-  <div>
-    <h2>Badge</h2>
-    <s-badge>Test</s-badge>
-  </div>
-  <div>
-    <h2>Toggle</h2>
-    <div>
-      <s-toggle scale=".75"></s-toggle>
-      <label>Scale 0.75</label>
+      </script>
     </div>
     <div>
-      <s-toggle></s-toggle>
-      <label>Scale 1</label>
+      <h2>Input</h2>
+      <s-input placeholder="Enter something..."></s-input>
     </div>
     <div>
-      <s-toggle scale="1.5"></s-toggle>
-      <label>Scale 1.5</label>
+      <h2>Button</h2>
+      <s-button>Default</s-button>
+      <s-button fill="outline">Outline</s-button>
+      <s-button fill="clear">Clear</s-button>
     </div>
-  </div>
-  <div>
-    <h2>Select</h2>
-    <s-select>
-      <div>A</div>
-      <div>B</div>
-      <div>C</div>
-    </s-select>
-  </div>
-  <div>
-    <h2>Popover</h2>
-    <s-popover>
-      <h1>This is a popover</h1>
-      <p>Some content here...</p>
-      <s-button onclick="togglePopover()">Toogle Popover</s-button>
-    </s-popover>
-    <s-button fill="outline" onclick="togglePopover()">Toogle Popover</s-button>
-    <script>function togglePopover() {
-        const popover = document.querySelector('s-popover');
-        popover.isHidden = !popover.isHidden;
-      }
-    </script>
+    <div>
+      <h2>Card</h2>
+      <s-card style="height: 150px; width: 150px;">
+        <h3>Card Title</h3>
+        <p>Card content...</p>
+      </s-card>
+    </div>
+    <div>
+      <h2>Badge</h2>
+      <s-badge>Test</s-badge>
+    </div>
+    <div>
+      <h2>Toggle</h2>
+      <div>
+        <s-toggle scale=".75"></s-toggle>
+        <label>Scale 0.75</label>
+      </div>
+      <div>
+        <s-toggle></s-toggle>
+        <label>Scale 1</label>
+      </div>
+      <div>
+        <s-toggle scale="1.5"></s-toggle>
+        <label>Scale 1.5</label>
+      </div>
+    </div>
+    <div>
+      <h2>Select</h2>
+      <s-select>
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+      </s-select>
+    </div>
+    <div>
+      <h2>Popover</h2>
+      <s-popover>
+        <h1>This is a popover</h1>
+        <p>Some content here...</p>
+        <s-button onclick="togglePopover()">Toogle Popover</s-button>
+      </s-popover>
+      <s-button fill="outline" onclick="togglePopover()">Toogle Popover</s-button>
+      <script>function togglePopover() {
+          const popover = document.querySelector('s-popover');
+          popover.isHidden = !popover.isHidden;
+        }
+      </script>
+    </div>
   </div>
 </body>
 
