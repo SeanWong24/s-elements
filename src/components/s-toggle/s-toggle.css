@@ -9,6 +9,7 @@
 
 #native-element {
   position: relative;
+  margin: 0;
   height: calc(1rem * var(--scale));
   width: calc(2rem * var(--scale));
   background-color: var(--background-color);
