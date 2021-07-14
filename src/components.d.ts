@@ -22,6 +22,8 @@ export namespace Components {
     }
     interface SSelect {
     }
+    interface SSelectOption {
+    }
     interface SToggle {
         "checked": boolean;
         "scale": number;
@@ -66,6 +68,12 @@ declare global {
         prototype: HTMLSSelectElement;
         new (): HTMLSSelectElement;
     };
+    interface HTMLSSelectOptionElement extends Components.SSelectOption, HTMLStencilElement {
+    }
+    var HTMLSSelectOptionElement: {
+        prototype: HTMLSSelectOptionElement;
+        new (): HTMLSSelectOptionElement;
+    };
     interface HTMLSToggleElement extends Components.SToggle, HTMLStencilElement {
     }
     var HTMLSToggleElement: {
@@ -85,6 +93,7 @@ declare global {
         "s-input": HTMLSInputElement;
         "s-popover": HTMLSPopoverElement;
         "s-select": HTMLSSelectElement;
+        "s-select-option": HTMLSSelectOptionElement;
         "s-toggle": HTMLSToggleElement;
         "s-ui": HTMLSUiElement;
     }
@@ -108,6 +117,8 @@ declare namespace LocalJSX {
     }
     interface SSelect {
     }
+    interface SSelectOption {
+    }
     interface SToggle {
         "checked"?: boolean;
         "onSChange"?: (event: CustomEvent<boolean>) => void;
@@ -122,6 +133,7 @@ declare namespace LocalJSX {
         "s-input": SInput;
         "s-popover": SPopover;
         "s-select": SSelect;
+        "s-select-option": SSelectOption;
         "s-toggle": SToggle;
         "s-ui": SUi;
     }
@@ -136,6 +148,7 @@ declare module "@stencil/core" {
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
             "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
+            "s-select-option": LocalJSX.SSelectOption & JSXBase.HTMLAttributes<HTMLSSelectOptionElement>;
             "s-toggle": LocalJSX.SToggle & JSXBase.HTMLAttributes<HTMLSToggleElement>;
             "s-ui": LocalJSX.SUi & JSXBase.HTMLAttributes<HTMLSUiElement>;
         }
