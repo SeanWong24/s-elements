@@ -1,5 +1,7 @@
 :host {
   --animation-duration: unset;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 #main-container {

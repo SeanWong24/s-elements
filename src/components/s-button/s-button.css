@@ -4,6 +4,7 @@
   --padding: .5rem;
 
   display: inline-block;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #native-element {

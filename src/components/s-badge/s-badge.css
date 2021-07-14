@@ -2,6 +2,7 @@
   --background-color: deepskyblue;
 
   display: inline-block;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #main-container {

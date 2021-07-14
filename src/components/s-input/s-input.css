@@ -3,6 +3,7 @@
   --highlight-color: deepskyblue;
   
   display: inline-block;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #native-element {

@@ -4,6 +4,7 @@
   --scale: unset;
 
   display: inline-block;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #native-element {
