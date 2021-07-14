@@ -1,4 +1,4 @@
-import { Component, Host, h, State, Watch, ComponentInterface } from '@stencil/core';
+import { Component, Host, h, State, Watch, ComponentInterface, Prop, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 's-select',
@@ -6,6 +6,16 @@ import { Component, Host, h, State, Watch, ComponentInterface } from '@stencil/c
   shadow: true,
 })
 export class SSelect implements ComponentInterface {
+
+  private get actualValue() {
+    const selectOptions = Array.from(this.hostElement.querySelectorAll('s-select-option'));
+    const selectedOption = selectOptions.find(
+      selectOption => selectOption.value === this.value || selectOption.innerText === this.value
+    );
+    return selectedOption ? this.value : undefined;
+  }
+
+  @Element() hostElement: HTMLSSelectElement;
 
   @State() isDropdownHidden = true;
 
@@ -17,6 +27,17 @@ export class SSelect implements ComponentInterface {
       this.addDropdownDismissListenerToBodyElement();
     }
   }
+
+  @Prop({ reflect: true }) placeholder: string;
+
+  @Prop({ reflect: true, mutable: true }) value: string;
+
+  @Watch('value')
+  valueChanged(value: string) {
+    this.sChange.emit(value);
+  }
+
+  @Event() sChange: EventEmitter<string>;
 
   connectedCallback() {
     if (this.isDropdownHidden) {
@@ -34,7 +55,11 @@ export class SSelect implements ComponentInterface {
           class={this.isDropdownHidden ? 'dropdown-hidden' : ''}
           onClick={() => this.isDropdownHidden = !this.isDropdownHidden}
         >
-          <span>something</span>
+          <span>{this.actualValue}</span>
+          {
+            !this.actualValue &&
+            <span id="placeholder">{this.placeholder}</span>
+          }
           <s-button
             id="dropdown-toggle-button"
             fill="clear"

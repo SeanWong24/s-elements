@@ -21,8 +21,11 @@ export namespace Components {
         "isHidden": boolean;
     }
     interface SSelect {
+        "placeholder": string;
+        "value": string;
     }
     interface SSelectOption {
+        "value": string;
     }
     interface SToggle {
         "checked": boolean;
@@ -116,8 +119,12 @@ declare namespace LocalJSX {
         "isHidden"?: boolean;
     }
     interface SSelect {
+        "onSChange"?: (event: CustomEvent<string>) => void;
+        "placeholder"?: string;
+        "value"?: string;
     }
     interface SSelectOption {
+        "value"?: string;
     }
     interface SToggle {
         "checked"?: boolean;

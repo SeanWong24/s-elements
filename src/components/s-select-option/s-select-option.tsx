@@ -1,4 +1,4 @@
-import { Component, Host, h, ComponentInterface } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 's-select-option',
@@ -7,10 +7,23 @@ import { Component, Host, h, ComponentInterface } from '@stencil/core';
 })
 export class SSelectOption implements ComponentInterface {
 
+  private get actualValue() {
+    return this.value || this.hostElement.innerText;
+  }
+
+  private get parentSelectElement() {
+    const parent = this.hostElement.parentElement;
+    return parent.tagName.toLowerCase() === 's-select' ? (parent as HTMLSSelectElement) : undefined;
+  }
+
+  @Element() hostElement: HTMLSSelectOptionElement;
+
+  @Prop() value: string;
+
   render() {
     return (
       <Host>
-        <div id="main-container">
+        <div id="main-container" onClick={() => this.parentSelectElement.value = this.actualValue}>
           <slot></slot>
         </div>
       </Host>

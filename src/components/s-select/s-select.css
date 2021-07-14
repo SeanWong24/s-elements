@@ -69,3 +69,7 @@
   box-shadow: unset;
   transition: transform 300ms cubic-bezier(0.5, -0.45, 0.5, 1), box-shadow 300ms cubic-bezier(0.5, -0.45, 0.5, 1);
 }
+
+#select #placeholder {
+  color: grey;
+}
