@@ -20,6 +20,8 @@ export namespace Components {
     interface SPopover {
         "isHidden": boolean;
     }
+    interface SSelect {
+    }
     interface SToggle {
         "checked": boolean;
         "scale": number;
@@ -56,6 +58,12 @@ declare global {
         prototype: HTMLSPopoverElement;
         new (): HTMLSPopoverElement;
     };
+    interface HTMLSSelectElement extends Components.SSelect, HTMLStencilElement {
+    }
+    var HTMLSSelectElement: {
+        prototype: HTMLSSelectElement;
+        new (): HTMLSSelectElement;
+    };
     interface HTMLSToggleElement extends Components.SToggle, HTMLStencilElement {
     }
     var HTMLSToggleElement: {
@@ -68,6 +76,7 @@ declare global {
         "s-card": HTMLSCardElement;
         "s-input": HTMLSInputElement;
         "s-popover": HTMLSPopoverElement;
+        "s-select": HTMLSSelectElement;
         "s-toggle": HTMLSToggleElement;
     }
 }
@@ -88,6 +97,8 @@ declare namespace LocalJSX {
     interface SPopover {
         "isHidden"?: boolean;
     }
+    interface SSelect {
+    }
     interface SToggle {
         "checked"?: boolean;
         "onSChange"?: (event: CustomEvent<boolean>) => void;
@@ -99,6 +110,7 @@ declare namespace LocalJSX {
         "s-card": SCard;
         "s-input": SInput;
         "s-popover": SPopover;
+        "s-select": SSelect;
         "s-toggle": SToggle;
     }
 }
@@ -111,6 +123,7 @@ declare module "@stencil/core" {
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
+            "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
             "s-toggle": LocalJSX.SToggle & JSXBase.HTMLAttributes<HTMLSToggleElement>;
         }
     }
