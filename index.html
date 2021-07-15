@@ -21,9 +21,9 @@
       background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     }</style> </head> <body> <div id="page-wrap"> <s-ui> <h1>S-Elements</h1> <div> <s-toggle id="color-background-toggle"></s-toggle> <label>Colorful Background</label> <script>
           document.querySelector('#color-background-toggle')
-            .addEventListener('sChange', toggleColorfulPageBackground);
+            .addEventListener('sChange', toggleCollapse);
 
-          function toggleColorfulPageBackground() {
+          function toggleCollapse() {
             const body = document.querySelector('#page-wrap');
             if (event.currentTarget.checked) {
               body.classList.add('color-background');
@@ -35,4 +35,11 @@
             const popover = document.querySelector('s-popover');
             popover.isHidden = !popover.isHidden;
           }
-        </script> </div> <div> <h2>Grid</h2> <s-grid rows="1fr 2fr 50px" row-gap="5px" columns="2fr 100px 1fr" column-gap="5px" style="height: 300px; width: 100%;"> <s-card data-column-span="3">1</s-card> <s-card data-row-span="2">2</s-card> <s-card data-row="3" data-column-span="2">3</s-card> <s-card data-row="2">4</s-card> <s-card data-row="2">5</s-card> </s-grid> </div> </s-ui> </div> </body></html>
+        </script> </div> <div> <h2>Grid</h2> <s-grid rows="1fr 2fr 50px" row-gap="5px" columns="2fr 100px 1fr" column-gap="5px" style="height: 300px; width: 100%;"> <s-card data-column-span="3">1</s-card> <s-card data-row-span="2">2</s-card> <s-card data-row="3" data-column-span="2">3</s-card> <s-card data-row="2">4</s-card> <s-card data-row="2">5</s-card> </s-grid> </div> <div> <h2>Collapse</h2> <s-toggle id="collapse-toggle"></s-toggle> <label>Toggle Collapse</label> <s-collapse id="collapse"> <s-card style="height: 100px; width: 250px;"> <h1>This is a card</h1> </s-card> </s-collapse> <script>
+          document.querySelector('#collapse-toggle')
+            .addEventListener('sChange', toggleCollapse);
+
+          function toggleCollapse() {
+            document.querySelector('#collapse').isExpanded = event.currentTarget.checked;
+          }
+        </script> </div> </s-ui> </div> </body></html>
