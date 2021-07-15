@@ -19,11 +19,15 @@ export class SSelectOption implements ComponentInterface {
   @Element() hostElement: HTMLSSelectOptionElement;
 
   @Prop() value: string;
+  @Prop() isSelected = false;
 
   render() {
     return (
       <Host>
-        <div id="main-container" onClick={() => this.parentSelectElement.value = this.actualValue}>
+        <div
+          id="main-container"
+          class={this.isSelected ? 'selected' : ''}
+          onClick={() => this.parentSelectElement.value = this.actualValue}>
           <slot></slot>
         </div>
       </Host>

@@ -31,6 +31,7 @@ export namespace Components {
         "value": string;
     }
     interface SSelectOption {
+        "isSelected": boolean;
         "value": string;
     }
     interface SToggle {
@@ -143,6 +144,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface SSelectOption {
+        "isSelected"?: boolean;
         "value"?: string;
     }
     interface SToggle {

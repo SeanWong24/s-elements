@@ -7,12 +7,18 @@ import { Component, Host, h, State, Watch, ComponentInterface, Prop, Element, Ev
 })
 export class SSelect implements ComponentInterface {
 
-  private get actualValue() {
-    const selectOptions = Array.from(this.hostElement.querySelectorAll('s-select-option'));
-    const selectedOption = selectOptions.find(
+  private get selectOptionElements() {
+    return Array.from(this.hostElement.querySelectorAll('s-select-option'));
+  }
+
+  private get selectedOptionElement() {
+    return this.selectOptionElements.find(
       selectOption => selectOption.value === this.value || selectOption.innerText === this.value
     );
-    return selectedOption ? this.value : undefined;
+  }
+
+  private get actualValue() {
+    return this.selectedOptionElement ? this.value : undefined;
   }
 
   @Element() hostElement: HTMLSSelectElement;
@@ -34,6 +40,12 @@ export class SSelect implements ComponentInterface {
 
   @Watch('value')
   valueChanged(value: string) {
+    this.selectOptionElements.forEach(selectOptionElement => {
+      const isSelected =
+        selectOptionElement.value === this.value ||
+        selectOptionElement.innerText === this.value;
+      selectOptionElement.isSelected = isSelected;
+    });
     this.sChange.emit(value);
   }
 
