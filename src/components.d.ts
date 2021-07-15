@@ -13,6 +13,9 @@ export namespace Components {
     }
     interface SCard {
     }
+    interface SCollapse {
+        "isHidden": boolean;
+    }
     interface SGrid {
         "columnGap": string;
         "columns": string;
@@ -60,6 +63,12 @@ declare global {
         prototype: HTMLSCardElement;
         new (): HTMLSCardElement;
     };
+    interface HTMLSCollapseElement extends Components.SCollapse, HTMLStencilElement {
+    }
+    var HTMLSCollapseElement: {
+        prototype: HTMLSCollapseElement;
+        new (): HTMLSCollapseElement;
+    };
     interface HTMLSGridElement extends Components.SGrid, HTMLStencilElement {
     }
     var HTMLSGridElement: {
@@ -106,6 +115,7 @@ declare global {
         "s-badge": HTMLSBadgeElement;
         "s-button": HTMLSButtonElement;
         "s-card": HTMLSCardElement;
+        "s-collapse": HTMLSCollapseElement;
         "s-grid": HTMLSGridElement;
         "s-input": HTMLSInputElement;
         "s-popover": HTMLSPopoverElement;
@@ -122,6 +132,9 @@ declare namespace LocalJSX {
         "fill"?: 'default' | 'outline' | 'clear';
     }
     interface SCard {
+    }
+    interface SCollapse {
+        "isHidden"?: boolean;
     }
     interface SGrid {
         "columnGap"?: string;
@@ -158,6 +171,7 @@ declare namespace LocalJSX {
         "s-badge": SBadge;
         "s-button": SButton;
         "s-card": SCard;
+        "s-collapse": SCollapse;
         "s-grid": SGrid;
         "s-input": SInput;
         "s-popover": SPopover;
@@ -174,6 +188,7 @@ declare module "@stencil/core" {
             "s-badge": LocalJSX.SBadge & JSXBase.HTMLAttributes<HTMLSBadgeElement>;
             "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
+            "s-collapse": LocalJSX.SCollapse & JSXBase.HTMLAttributes<HTMLSCollapseElement>;
             "s-grid": LocalJSX.SGrid & JSXBase.HTMLAttributes<HTMLSGridElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;

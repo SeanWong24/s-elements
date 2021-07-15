@@ -1,0 +1,20 @@
+:host {
+  --animation-duration: unset;
+}
+
+#main-container {
+  height: auto;
+  width: auto;
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform var(--animation-duration) cubic-bezier(0.5, 0, 0.5, 1.45);
+}
+
+#main-container.hidden {
+  display: none;
+}
+
+#main-container.minimized {
+  transform: scaleY(0);
+  transition: transform var(--animation-duration) cubic-bezier(0.5, -0.45, 0.5, 1);
+}
