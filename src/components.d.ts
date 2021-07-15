@@ -13,6 +13,12 @@ export namespace Components {
     }
     interface SCard {
     }
+    interface SGrid {
+        "columnGap": string;
+        "columns": string;
+        "rowGap": string;
+        "rows": string;
+    }
     interface SInput {
         "placeholder": string;
         "value": string;
@@ -52,6 +58,12 @@ declare global {
     var HTMLSCardElement: {
         prototype: HTMLSCardElement;
         new (): HTMLSCardElement;
+    };
+    interface HTMLSGridElement extends Components.SGrid, HTMLStencilElement {
+    }
+    var HTMLSGridElement: {
+        prototype: HTMLSGridElement;
+        new (): HTMLSGridElement;
     };
     interface HTMLSInputElement extends Components.SInput, HTMLStencilElement {
     }
@@ -93,6 +105,7 @@ declare global {
         "s-badge": HTMLSBadgeElement;
         "s-button": HTMLSButtonElement;
         "s-card": HTMLSCardElement;
+        "s-grid": HTMLSGridElement;
         "s-input": HTMLSInputElement;
         "s-popover": HTMLSPopoverElement;
         "s-select": HTMLSSelectElement;
@@ -108,6 +121,12 @@ declare namespace LocalJSX {
         "fill"?: 'default' | 'outline' | 'clear';
     }
     interface SCard {
+    }
+    interface SGrid {
+        "columnGap"?: string;
+        "columns"?: string;
+        "rowGap"?: string;
+        "rows"?: string;
     }
     interface SInput {
         "onSChange"?: (event: CustomEvent<string>) => void;
@@ -137,6 +156,7 @@ declare namespace LocalJSX {
         "s-badge": SBadge;
         "s-button": SButton;
         "s-card": SCard;
+        "s-grid": SGrid;
         "s-input": SInput;
         "s-popover": SPopover;
         "s-select": SSelect;
@@ -152,6 +172,7 @@ declare module "@stencil/core" {
             "s-badge": LocalJSX.SBadge & JSXBase.HTMLAttributes<HTMLSBadgeElement>;
             "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
+            "s-grid": LocalJSX.SGrid & JSXBase.HTMLAttributes<HTMLSGridElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
             "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
