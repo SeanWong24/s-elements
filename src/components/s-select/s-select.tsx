@@ -75,7 +75,16 @@ export class SSelect implements ComponentInterface {
           <s-button
             id="dropdown-toggle-button"
             fill="clear"
-          >ᐯ</s-button>
+          >
+            <svg width="1rem" height="1rem" viewBox="0 0 100 100">
+              <path
+                stroke-width="10px"
+                stroke="black"
+                fill="transparent"
+                d="M20,30 L50,70 L 80 30"
+              />
+            </svg>
+          </s-button>
           <div id="dropdown">
             <slot></slot>
           </div>

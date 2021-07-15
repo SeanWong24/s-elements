@@ -49,6 +49,15 @@
   transform: rotate(0deg);
 }
 
+#select #dropdown-toggle-button svg path {
+  stroke: var(--highlight-color);
+  transition: stroke 300ms;
+}
+
+#select.dropdown-hidden #dropdown-toggle-button svg path {
+  stroke: black;
+}
+
 #select #dropdown {
   box-sizing: border-box;
   position: absolute;
