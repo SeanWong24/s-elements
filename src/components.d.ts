@@ -22,6 +22,12 @@ export namespace Components {
         "rowGap": string;
         "rows": string;
     }
+    interface SGridItem {
+        "column": number;
+        "columnSpan": number;
+        "row": number;
+        "rowSpan": number;
+    }
     interface SInput {
         "placeholder": string;
         "value": string;
@@ -75,6 +81,12 @@ declare global {
         prototype: HTMLSGridElement;
         new (): HTMLSGridElement;
     };
+    interface HTMLSGridItemElement extends Components.SGridItem, HTMLStencilElement {
+    }
+    var HTMLSGridItemElement: {
+        prototype: HTMLSGridItemElement;
+        new (): HTMLSGridItemElement;
+    };
     interface HTMLSInputElement extends Components.SInput, HTMLStencilElement {
     }
     var HTMLSInputElement: {
@@ -117,6 +129,7 @@ declare global {
         "s-card": HTMLSCardElement;
         "s-collapse": HTMLSCollapseElement;
         "s-grid": HTMLSGridElement;
+        "s-grid-item": HTMLSGridItemElement;
         "s-input": HTMLSInputElement;
         "s-popover": HTMLSPopoverElement;
         "s-select": HTMLSSelectElement;
@@ -141,6 +154,12 @@ declare namespace LocalJSX {
         "columns"?: string;
         "rowGap"?: string;
         "rows"?: string;
+    }
+    interface SGridItem {
+        "column"?: number;
+        "columnSpan"?: number;
+        "row"?: number;
+        "rowSpan"?: number;
     }
     interface SInput {
         "onSChange"?: (event: CustomEvent<string>) => void;
@@ -173,6 +192,7 @@ declare namespace LocalJSX {
         "s-card": SCard;
         "s-collapse": SCollapse;
         "s-grid": SGrid;
+        "s-grid-item": SGridItem;
         "s-input": SInput;
         "s-popover": SPopover;
         "s-select": SSelect;
@@ -190,6 +210,7 @@ declare module "@stencil/core" {
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
             "s-collapse": LocalJSX.SCollapse & JSXBase.HTMLAttributes<HTMLSCollapseElement>;
             "s-grid": LocalJSX.SGrid & JSXBase.HTMLAttributes<HTMLSGridElement>;
+            "s-grid-item": LocalJSX.SGridItem & JSXBase.HTMLAttributes<HTMLSGridItemElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
             "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;

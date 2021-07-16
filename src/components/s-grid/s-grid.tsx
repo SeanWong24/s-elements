@@ -44,15 +44,6 @@ export class SGrid implements ComponentInterface {
     this.columnGapChanged(this.columnGap);
   }
 
-  componentDidRender() {
-    this.hostElement.querySelectorAll('*').forEach((childElement: HTMLElement) => {
-      childElement.style.setProperty('--grid-row', childElement.getAttribute('data-row'));
-      childElement.style.setProperty('--grid-column', childElement.getAttribute('data-column'));
-      childElement.style.setProperty('--grid-row-span', childElement.getAttribute('data-row-span'));
-      childElement.style.setProperty('--grid-column-span', childElement.getAttribute('data-column-span'));
-    })
-  }
-
   render() {
     return (
       <Host>

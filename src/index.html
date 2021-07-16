@@ -116,13 +116,29 @@
       </div>
       <div>
         <h2>Grid</h2>
-        <s-grid rows="1fr 2fr 50px" row-gap="5px" columns="2fr 100px 1fr" column-gap="5px"
+        <s-grid rows="1fr 2fr 50px 1fr" row-gap="5px" columns="1fr 2fr 100px 1fr" column-gap="5px"
           style="height: 300px; width: 100%">
-          <s-card data-column-span="3">1</s-card>
-          <s-card data-row-span="2">2</s-card>
-          <s-card data-row="3" data-column-span="2">3</s-card>
-          <s-card data-row="2">4</s-card>
-          <s-card data-row="2">5</s-card>
+          <s-grid-item column-span="4">
+            <s-card>1</s-card>
+          </s-grid-item>
+          <s-grid-item row="2" column="4" row-span="3">
+            <s-card>2</s-card>
+          </s-grid-item>
+          <s-grid-item row="4" column-span="3">
+            <s-card>3</s-card>
+          </s-grid-item>
+          <s-grid-item row="2" row-span="2">
+            <s-card>4</s-card>
+          </s-grid-item>
+          <s-grid-item column-span="2">
+            <s-card>5</s-card>
+          </s-grid-item>
+          <s-grid-item row="3" column="3">
+            <s-card>6</s-card>
+          </s-grid-item>
+          <s-grid-item>
+            <s-card>7</s-card>
+          </s-grid-item>
         </s-grid>
       </div>
       <div>
