@@ -1,0 +1,58 @@
+:host {
+    --primary-color-hue: 220;
+    --primary-color-saturation: 100%;
+    --primary-color-lightness: 60%;
+
+    --secondary-color-hue: 200;
+    --secondary-color-saturation: 100%;
+    --secondary-color-lightness: 60%;
+
+    --tertiary-color-hue: 260;
+    --tertiary-color-saturation: 100%;
+    --tertiary-color-lightness: 60%;
+    
+    --success-color-hue: 145;
+    --success-color-saturation: 100%;
+    --success-color-lightness: 60%;
+
+    --warning-color-hue: 50;
+    --warning-color-saturation: 100%;
+    --warning-color-lightness: 60%;
+
+    --danger-color-hue: 350;
+    --danger-color-saturation: 100%;
+    --danger-color-lightness: 60%;
+
+    --dark-color-hue: 0;
+    --dark-color-saturation: 0%;
+    --dark-color-lightness: 15%;
+
+    --medium-color-hue: 0;
+    --medium-color-saturation: 100%;
+    --medium-color-lightness: 60%;
+
+    --light-color-hue: 0;
+    --light-color-saturation: 0%;
+    --light-color-lightness: 95%;
+
+    --background-color-hue: 0;
+    --background-color-saturation: 0%;
+    --background-color-lightness: 100%;
+
+    --border-color-hue: 0;
+    --border-color-saturation: 0%;
+    --border-color-lightness: 80%;
+
+    --primary-material-transparency: 1;
+    --primary-material-backdrop-filter: unset;
+
+    --secondary-material-transparency: .75;
+    --secondary-material-backdrop-filter: blur(25px);
+
+    --animation-duration: 300ms;
+}
+
+:host {
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
