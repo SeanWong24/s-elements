@@ -1,0 +1,11 @@
+:host {
+    --primary-color-hsl: var(--primary-color-hue), var(--primary-color-saturation), var(--primary-color-lightness);
+    --secondary-color-hsl: var(--secondary-color-hue), var(--secondary-color-saturation), var(--secondary-color-lightness);
+    --tertiary-color-hsl: var(--tertiary-color-hue), var(--tertiary-color-saturation), var(--tertiary-color-lightness);
+    --success-color-hsl: var(--success-color-hue), var(--success-color-saturation), var(--success-color-lightness);
+    --warning-color-hsl: var(--warning-color-hue), var(--warning-color-saturation), var(--warning-color-lightness);
+    --danger-color-hsl: var(--danger-color-hue), var(--danger-color-saturation), var(--danger-color-lightness);
+    --dark-color-hsl: var(--dark-color-hue), var(--dark-color-saturation), var(--dark-color-lightness);
+    --medium-color-hsl: var(--medium-color-hue), var(--medium-color-saturation), var(--medium-color-lightness);
+    --light-color-hsl: var(--light-color-hue), var(--light-color-saturation), var(--light-color-lightness);
+}

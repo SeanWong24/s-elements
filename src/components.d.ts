@@ -5,8 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { UIColor } from "./global/ui-color";
 export namespace Components {
     interface SBadge {
+        "color": UIColor;
     }
     interface SButton {
         "fill": 'default' | 'outline' | 'clear';
@@ -140,6 +142,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SBadge {
+        "color"?: UIColor;
     }
     interface SButton {
         "fill"?: 'default' | 'outline' | 'clear';
