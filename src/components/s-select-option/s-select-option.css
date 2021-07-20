@@ -1,6 +1,4 @@
 :host {
-  --highlight-color: deepskyblue;
-
   display: block;
   -webkit-tap-highlight-color: transparent;
 }
