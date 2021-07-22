@@ -30,6 +30,10 @@ export class SSelect implements ComponentInterface {
     if (isDropdownHidden) {
       this.removeDropdownDismissListenerToBodyElement();
     } else {
+      const windowHeight = window.innerHeight;
+      const hostElementClientRect = this.hostElement.getBoundingClientRect();
+      const dropdownMaxHeight = windowHeight - hostElementClientRect.top - hostElementClientRect.height;
+      this.updateCSSVariable('--dropdown-max-height', `${dropdownMaxHeight}px`);
       this.addDropdownDismissListenerToBodyElement();
     }
   }
@@ -86,7 +90,9 @@ export class SSelect implements ComponentInterface {
             </svg>
           </s-button>
           <div id="dropdown">
-            <slot></slot>
+            <div>
+              <slot></slot>
+            </div>
           </div>
         </div>
       </Host>
@@ -106,5 +112,9 @@ export class SSelect implements ComponentInterface {
   private dismissDropdown = () => {
     this.isDropdownHidden = true;
   };
+  
+  private updateCSSVariable(variableName: string, value: string) {
+    this.hostElement.style.setProperty(variableName, value);
+  }
 
 }
