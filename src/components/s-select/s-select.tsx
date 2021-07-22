@@ -18,8 +18,8 @@ export class SSelect implements ComponentInterface {
     );
   }
 
-  private get actualValue() {
-    return this.selectedOptionElement ? this.value : undefined;
+  private get displayedValue() {
+    return this.selectedOptionElement?.innerText || this.selectedOptionElement?.value;
   }
 
   @Element() hostElement: HTMLSSelectElement;
@@ -84,9 +84,9 @@ export class SSelect implements ComponentInterface {
           class={this.isDropdownHidden ? 'dropdown-hidden' : ''}
           onClick={() => this.isDropdownHidden = !this.isDropdownHidden}
         >
-          <span>{this.actualValue}</span>
+          <span>{this.displayedValue}</span>
           {
-            !this.actualValue &&
+            !this.displayedValue &&
             <span id="placeholder">{this.placeholder}</span>
           }
           <s-button
