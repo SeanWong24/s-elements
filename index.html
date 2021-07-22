@@ -21,9 +21,9 @@
       background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     }</style> </head> <body> <div id="page-wrap"> <s-ui> <h1>S-Elements</h1> <div> <s-toggle id="color-background-toggle"></s-toggle> <label>Colorful Background</label> <script>
           document.querySelector('#color-background-toggle')
-            .addEventListener('sChange', toggleCollapse);
+            .addEventListener('sChange', updateSelectElementColor);
 
-          function toggleCollapse() {
+          function updateSelectElementColor() {
             const body = document.querySelector('#page-wrap');
             if (event.currentTarget.checked) {
               body.classList.add('color-background');
@@ -33,13 +33,20 @@
           }
         </script> </div> <div id="badge"> <h2>Badge</h2> <s-badge>Primary</s-badge> <s-badge color="secondary">Secondary</s-badge> <s-badge color="tertiary">Tertiary</s-badge> <s-badge color="success">Success</s-badge> <s-badge color="warning">Warning</s-badge> <s-badge color="danger">Danger</s-badge> </div> <div id="button"> <h2>Button</h2> <s-button>Default</s-button> <s-button fill="outline">Outline</s-button> <s-button fill="clear">Clear</s-button> </div> <div id="card"> <h2>Card</h2> <s-card style="height: 150px; width: 150px;"> <h3>Card Title</h3> <p>Card content...</p> </s-card> </div> <div id="collapse"> <h2>Collapse</h2> <s-toggle id="collapse-toggle"></s-toggle> <label>Toggle Collapse</label> <s-collapse id="collapse-element"> <s-card style="height: 100px; width: 250px;"> <h1>This is a card</h1> </s-card> </s-collapse> <script>
           document.querySelector('#collapse-toggle')
-            .addEventListener('sChange', toggleCollapse);
+            .addEventListener('sChange', updateSelectElementColor);
 
-          function toggleCollapse() {
+          function updateSelectElementColor() {
             document.querySelector('#collapse-element').isHidden = !event.currentTarget.checked;
           }
         </script> </div> <div id="grid"> <h2>Grid</h2> <s-grid rows="1fr 2fr 50px 1fr" row-gap="5px" columns="1fr 2fr 100px 1fr" column-gap="5px" style="height: 300px; width: 100%;"> <s-grid-item column-span="4"> <s-card>1</s-card> </s-grid-item> <s-grid-item row="2" column="4" row-span="3"> <s-card>2</s-card> </s-grid-item> <s-grid-item row="4" column-span="3"> <s-card>3</s-card> </s-grid-item> <s-grid-item row="2" row-span="2"> <s-card>4</s-card> </s-grid-item> <s-grid-item column-span="2"> <s-card>5</s-card> </s-grid-item> <s-grid-item row="3" column="3"> <s-card>6</s-card> </s-grid-item> <s-grid-item> <s-card>7</s-card> </s-grid-item> </s-grid> </div> <div id="input"> <h2>Input</h2> <s-input placeholder="Enter something..."></s-input> </div> <div id="popover"> <h2>Popover</h2> <s-popover> <h1>This is a popover</h1> <p>Some content here...</p> <s-button onclick="togglePopover()">Toogle Popover</s-button> </s-popover> <s-button fill="outline" onclick="togglePopover()">Toogle Popover</s-button> <script>function togglePopover() {
             const popover = document.querySelector('s-popover');
             popover.isHidden = !popover.isHidden;
           }
-        </script> </div> <div id="select"> <h2>Select</h2> <s-select placeholder="Select one" style="width: 150px;"> <s-select-option>A</s-select-option> <s-select-option>B</s-select-option> <s-select-option>C</s-select-option> </s-select> </div> <div id="toggle"> <h2>Toggle</h2> <div> <s-toggle scale=".75"></s-toggle> <label>Scale 0.75</label> </div> <div> <s-toggle></s-toggle> <label>Scale 1</label> </div> <div> <s-toggle scale="1.5"></s-toggle> <label>Scale 1.5</label> </div> </div> </s-ui> </div> </body></html>
+        </script> </div> <div id="select"> <h2>Select</h2> <s-select id="select-element" placeholder="Select one" style="width: 150px;"> <s-select-option value="primary">Primary</s-select-option> <s-select-option value="secondary">Secondary</s-select-option> <s-select-option value="tertiary">Tertiary</s-select-option> <s-select-option value="success">Success</s-select-option> <s-select-option value="warning">Warning</s-select-option> <s-select-option value="danger">Danger</s-select-option> </s-select> <script>
+          document.querySelector('#select-element')
+            .addEventListener('sChange', updateSelectElementColor);
+
+          function updateSelectElementColor() {
+            document.querySelector('#select-element').color = event.detail;
+          }
+        </script> </div> <div id="toggle"> <h2>Toggle</h2> <div> <s-toggle scale=".75"></s-toggle> <label>Scale 0.75</label> </div> <div> <s-toggle></s-toggle> <label>Scale 1</label> </div> <div> <s-toggle scale="1.5"></s-toggle> <label>Scale 1.5</label> </div> </div> </s-ui> </div> </body></html>
