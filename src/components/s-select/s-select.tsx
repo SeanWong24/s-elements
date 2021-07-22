@@ -1,4 +1,5 @@
 import { Component, Host, h, State, Watch, ComponentInterface, Prop, Element, Event, EventEmitter } from '@stencil/core';
+import { UIColor } from '../../global/ui-color';
 
 @Component({
   tag: 's-select',
@@ -53,9 +54,21 @@ export class SSelect implements ComponentInterface {
     this.sChange.emit(value);
   }
 
+  @Prop({ reflect: true }) color: UIColor = 'primary';
+
+  @Watch('color')
+  colorChanged(color: UIColor) {
+    this.updateCSSVariable(
+      '--highlight-color',
+      `hsl(var(--${color}-color-hsl))`
+    );
+  }
+
   @Event() sChange: EventEmitter<string>;
 
   connectedCallback() {
+    this.colorChanged(this.color);
+
     if (this.isDropdownHidden) {
       this.removeDropdownDismissListenerToBodyElement();
     } else {
@@ -112,7 +125,7 @@ export class SSelect implements ComponentInterface {
   private dismissDropdown = () => {
     this.isDropdownHidden = true;
   };
-  
+
   private updateCSSVariable(variableName: string, value: string) {
     this.hostElement.style.setProperty(variableName, value);
   }

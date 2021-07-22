@@ -38,6 +38,7 @@ export namespace Components {
         "isHidden": boolean;
     }
     interface SSelect {
+        "color": UIColor;
         "placeholder": string;
         "value": string;
     }
@@ -174,6 +175,7 @@ declare namespace LocalJSX {
         "isHidden"?: boolean;
     }
     interface SSelect {
+        "color"?: UIColor;
         "onSChange"?: (event: CustomEvent<string>) => void;
         "placeholder"?: string;
         "value"?: string;

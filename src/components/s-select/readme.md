@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type     | Default     |
-| ------------- | ------------- | ----------- | -------- | ----------- |
-| `placeholder` | `placeholder` |             | `string` | `undefined` |
-| `value`       | `value`       |             | `string` | `undefined` |
+| Property      | Attribute     | Description | Type                                                                                                            | Default     |
+| ------------- | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
+| `color`       | `color`       |             | `"danger" \| "dark" \| "light" \| "medium" \| "primary" \| "secondary" \| "success" \| "tertiary" \| "warning"` | `'primary'` |
+| `placeholder` | `placeholder` |             | `string`                                                                                                        | `undefined` |
+| `value`       | `value`       |             | `string`                                                                                                        | `undefined` |
 
 
 ## Events

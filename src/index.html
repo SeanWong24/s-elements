@@ -44,9 +44,9 @@
         <label>Colorful Background</label>
         <script>
           document.querySelector('#color-background-toggle')
-            .addEventListener('sChange', toggleCollapse);
+            .addEventListener('sChange', updateSelectElementColor);
 
-          function toggleCollapse() {
+          function updateSelectElementColor() {
             const body = document.querySelector('#page-wrap');
             if (event.currentTarget.checked) {
               body.classList.add('color-background');
@@ -89,9 +89,9 @@
         </s-collapse>
         <script>
           document.querySelector('#collapse-toggle')
-            .addEventListener('sChange', toggleCollapse);
+            .addEventListener('sChange', updateSelectElementColor);
 
-          function toggleCollapse() {
+          function updateSelectElementColor() {
             document.querySelector('#collapse-element').isHidden = !event.currentTarget.checked;
           }
         </script>
@@ -143,11 +143,22 @@
       </div>
       <div id="select">
         <h2>Select</h2>
-        <s-select placeholder="Select one" style="width: 150px;">
-          <s-select-option>A</s-select-option>
-          <s-select-option>B</s-select-option>
-          <s-select-option>C</s-select-option>
+        <s-select id="select-element" placeholder="Select one" style="width: 150px;">
+          <s-select-option value="primary">Primary</s-select-option>
+          <s-select-option value="secondary">Secondary</s-select-option>
+          <s-select-option value="tertiary">Tertiary</s-select-option>
+          <s-select-option value="success">Success</s-select-option>
+          <s-select-option value="warning">Warning</s-select-option>
+          <s-select-option value="danger">Danger</s-select-option>
         </s-select>
+        <script>
+          document.querySelector('#select-element')
+            .addEventListener('sChange', updateSelectElementColor);
+
+          function updateSelectElementColor() {
+            document.querySelector('#select-element').color = event.detail;
+          }
+        </script>
       </div>
       <div id="toggle">
         <h2>Toggle</h2>

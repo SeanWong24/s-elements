@@ -1,6 +1,8 @@
+@import '../../global/component.css';
+
 :host {
   --border-color: hsl(var(--border-color-hue), var(--border-color-saturation), var(--border-color-lightness));
-  --highlight-color: hsl(var(--primary-color-hue), var(--primary-color-saturation), var(--primary-color-lightness));
+  --highlight-color: hsl(var(--primary-color-hsl));
 
   display: inline-block;
   -webkit-tap-highlight-color: transparent;
