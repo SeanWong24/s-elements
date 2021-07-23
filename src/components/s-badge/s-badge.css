@@ -1,7 +1,6 @@
 @import '../../global/component.css';
 
 :host {
-  --color: white;
   --background-color: hsla(var(--primary-color-hsl), var(--primary-material-transparency));
   --background-backdrop-filter: var(--primary-material-backdrop-filter);
 
@@ -11,10 +10,10 @@
 
 #main-container {
   box-sizing: border-box;
+  color: var(--primary-text-color);
   padding: .1rem .5rem;
   font-size: 1rem;
   text-align: center;
-  color: var(--color);
   background-color: var(--background-color);
   backdrop-filter: var(--background-backdrop-filter);
   user-select: none;

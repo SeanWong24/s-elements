@@ -1,6 +1,8 @@
+@import '../../global/component.css';
+
 :host {
-  --border-color: lightgrey;
-  --highlight-color: deepskyblue;
+  --border-color: hsl(var(--border-color-hue), var(--border-color-saturation), var(--border-color-lightness));
+  --highlight-color: hsl(var(--primary-color-hsl));
   
   display: inline-block;
   -webkit-tap-highlight-color: transparent;
@@ -18,12 +20,12 @@
 }
 
 #native-element:hover {
-  box-shadow: inset 0px 1px 3px 0px grey;
+  box-shadow: inset 0px 1px 3px 0px var(--shadow-color);
 }
 
 #native-element:focus {
   transform: scale(1.025);
   border-radius: 5px;
   border-bottom: 2px solid var(--highlight-color);
-  box-shadow: inset 0px 3px 5px 0px grey;
+  box-shadow: inset 0px 3px 5px 0px var(--shadow-color);
 }

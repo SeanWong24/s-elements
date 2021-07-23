@@ -43,6 +43,11 @@
     --border-color-saturation: 0%;
     --border-color-lightness: 80%;
 
+    --shadow-color: hsl(0, 0%, 70%);
+
+    --primary-text-color: hsl(0, 0%, 0%);
+    --secondary-text-color: hsl(0, 0%, 100%);
+
     --primary-material-transparency: 1;
     --primary-material-backdrop-filter: unset;
 

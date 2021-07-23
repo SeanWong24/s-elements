@@ -1,6 +1,4 @@
-:host {
-  --animation-duration: unset;
-}
+@import '../../global/component.css';
 
 #main-container {
   height: auto;
