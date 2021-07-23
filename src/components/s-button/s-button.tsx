@@ -1,4 +1,5 @@
-import { Component, Host, h, ComponentInterface, Prop } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Prop, Element, Watch } from '@stencil/core';
+import { UIColor } from '../../global/ui-color';
 
 @Component({
   tag: 's-button',
@@ -6,7 +7,24 @@ import { Component, Host, h, ComponentInterface, Prop } from '@stencil/core';
   shadow: true,
 })
 export class SButton implements ComponentInterface {
+
+  @Element() hostElement: HTMLSButtonElement;
+
   @Prop() fill: 'default' | 'outline' | 'clear' = 'default';
+  
+  @Prop({ reflect: true }) color: UIColor = 'primary';
+
+  @Watch('color')
+  colorChanged(color: UIColor) {
+    this.updateCSSVariable(
+      '--color',
+      `hsl(var(--${color}-color-hsl))`
+    );
+  }
+
+  connectedCallback() {
+    this.colorChanged(this.color);
+  }
 
   render() {
     return (
@@ -16,6 +34,10 @@ export class SButton implements ComponentInterface {
         </button>
       </Host>
     );
+  }
+
+  private updateCSSVariable(variableName: string, value: string) {
+    this.hostElement.style.setProperty(variableName, value);
   }
 
 }

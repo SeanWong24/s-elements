@@ -11,6 +11,7 @@ export namespace Components {
         "color": UIColor;
     }
     interface SButton {
+        "color": UIColor;
         "fill": 'default' | 'outline' | 'clear';
     }
     interface SCard {
@@ -147,6 +148,7 @@ declare namespace LocalJSX {
         "color"?: UIColor;
     }
     interface SButton {
+        "color"?: UIColor;
         "fill"?: 'default' | 'outline' | 'clear';
     }
     interface SCard {

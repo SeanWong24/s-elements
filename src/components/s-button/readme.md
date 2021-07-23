@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                | Default     |
-| -------- | --------- | ----------- | ----------------------------------- | ----------- |
-| `fill`   | `fill`    |             | `"clear" \| "default" \| "outline"` | `'default'` |
+| Property | Attribute | Description | Type                                                                                                            | Default     |
+| -------- | --------- | ----------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
+| `color`  | `color`   |             | `"danger" \| "dark" \| "light" \| "medium" \| "primary" \| "secondary" \| "success" \| "tertiary" \| "warning"` | `'primary'` |
+| `fill`   | `fill`    |             | `"clear" \| "default" \| "outline"`                                                                             | `'default'` |
 
 
 ## Dependencies
