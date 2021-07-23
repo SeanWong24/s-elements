@@ -48,6 +48,7 @@ export namespace Components {
     }
     interface SToggle {
         "checked": boolean;
+        "color": UIColor;
         "scale": number;
     }
     interface SUi {
@@ -186,6 +187,7 @@ declare namespace LocalJSX {
     }
     interface SToggle {
         "checked"?: boolean;
+        "color"?: UIColor;
         "onSChange"?: (event: CustomEvent<boolean>) => void;
         "scale"?: number;
     }

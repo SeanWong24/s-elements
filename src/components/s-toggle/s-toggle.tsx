@@ -1,4 +1,5 @@
 import { Component, Host, h, Event, EventEmitter, Prop, ComponentInterface, Watch, Element } from '@stencil/core';
+import { UIColor } from '../../global/ui-color';
 
 @Component({
   tag: 's-toggle',
@@ -18,10 +19,21 @@ export class SToggle implements ComponentInterface {
     this.updateCSSVariable('--scale', scale.toString());
   }
 
+  @Prop({ reflect: true }) color: UIColor = 'primary';
+
+  @Watch('color')
+  colorChanged(color: UIColor) {
+    this.updateCSSVariable(
+      '--highlight-color',
+      `hsl(var(--${color}-color-hsl))`
+    );
+  }
+
   @Event() sChange: EventEmitter<boolean>;
 
   connectedCallback() {
-    this.updateCSSVariable('--scale', this.scale.toString());
+    this.scaleChanged(this.scale);
+    this.colorChanged(this.color);
   }
 
   render() {
@@ -30,6 +42,7 @@ export class SToggle implements ComponentInterface {
         <input
           id="native-element"
           type="checkbox"
+          checked={this.checked}
           onChange={event => {
             this.checked = (event.currentTarget as HTMLInputElement).checked;
             this.sChange.emit(this.checked);

@@ -1,6 +1,8 @@
+@import '../../global/component.css';
+
 :host {
-  --background-color: rgb(239, 239, 239);
-  --highlight-color: deepskyblue;
+  --background-color: hsl(var(--border-color-hue), var(--border-color-saturation), var(--border-color-lightness));
+  --highlight-color: hsl(var(--primary-color-hsl));
   --scale: unset;
 
   display: inline-block;
