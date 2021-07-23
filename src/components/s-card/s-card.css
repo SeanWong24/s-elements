@@ -1,5 +1,7 @@
+@import '../../global/component.css';
+
 :host {
-  --background-color: rgb(250, 250, 250);
+  --background-color: hsl(var(--background-color-hue), var(--background-color-saturation), var(--background-color-lightness));
 
   display: inline-block;
   -webkit-tap-highlight-color: transparent;
