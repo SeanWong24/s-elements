@@ -43,7 +43,7 @@
     --border-color-saturation: 0%;
     --border-color-lightness: 80%;
 
-    --shadow-color: hsl(0, 0%, 70%);
+    --shadow-color: hsla(0, 0%, 0%, .5);
 
     --primary-text-color: hsl(0, 0%, 0%);
     --secondary-text-color: hsl(0, 0%, 100%);
