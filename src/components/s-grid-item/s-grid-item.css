@@ -1,9 +1,4 @@
 :host {
-  --grid-row: unset;
-  --grid-row-span: unset;
-  --grid-column: unset;
-  --grid-column-span: unset;
-
   display: block;
   height: 100%;
   width: 100%;

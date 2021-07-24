@@ -55,6 +55,10 @@
     --secondary-material-backdrop-filter: blur(25px);
 
     --animation-duration: 300ms;
+
+    --margin: .25rem;
+
+    --border-radius: .5rem;
 }
 
 :host {

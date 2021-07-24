@@ -5,6 +5,7 @@
   --highlight-color: hsl(var(--primary-color-hsl));
   
   display: inline-block;
+  margin: var(--margin);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -12,7 +13,7 @@
   box-sizing: border-box;
   outline: none;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   border: 0;
   border-bottom: 2px solid var(--border-color);
   padding: .5rem .5rem;
@@ -25,7 +26,7 @@
 
 #native-element:focus {
   transform: scale(1.025);
-  border-radius: 5px;
+  border-radius: calc(var(--border-radius) / 2);
   border-bottom: 2px solid var(--highlight-color);
   box-shadow: inset 0px 3px 5px 0px var(--shadow-color);
 }

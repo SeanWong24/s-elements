@@ -6,6 +6,7 @@
   --scale: unset;
 
   display: inline-block;
+  margin: var(--margin);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -17,7 +18,7 @@
   background-color: var(--background-color);
   cursor: pointer;
   appearance: none;
-  border-radius: 50vh;
+  border-radius: 100vmax;
   transition: all 300ms;
 }
 

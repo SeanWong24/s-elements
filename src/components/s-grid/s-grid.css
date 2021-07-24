@@ -1,9 +1,4 @@
 :host {
-  --grid-template-rows: unset;
-  --grid-template-columns: unset;
-  --grid-row-gap: unset;
-  --grid-column-gap: unset;
-
   display: block;
 }
 

@@ -1,5 +1,10 @@
 @import '../../global/component.css';
 
+:host {
+  display: block;
+  margin: var(--margin);
+}
+
 #main-container {
   height: auto;
   width: auto;
