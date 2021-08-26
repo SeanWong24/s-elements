@@ -1,4 +1,4 @@
-import { Component, Host, h, ComponentInterface, EventEmitter, Prop, Event } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, EventEmitter, Prop, Event, Watch, Element } from '@stencil/core';
 
 @Component({
   tag: 's-range',
@@ -7,12 +7,25 @@ import { Component, Host, h, ComponentInterface, EventEmitter, Prop, Event } fro
 })
 export class SRange implements ComponentInterface {
 
-  @Prop({ reflect: true, mutable: true }) value: number = 0;
+  @Element() hostElement: HTMLSRangeElement;
+
   @Prop({ reflect: true }) min: number = 0;
   @Prop({ reflect: true }) max: number = 100;
 
+  @Prop({ reflect: true, mutable: true }) value: number = 0;
+
+  @Watch('value')
+  valueChanged(value: number) {
+    const positionPercentage = (value - this.min) / (this.max - this.min) * 100;
+    this.updateCSSVariable('--handle-position', `${positionPercentage}%`);
+  }
+
   @Event() sChange: EventEmitter<string>;
   @Event() sInput: EventEmitter<InputEvent>;
+
+  connectedCallback() {
+    this.valueChanged(this.value);
+  }
 
   render() {
     return (
@@ -31,6 +44,10 @@ export class SRange implements ComponentInterface {
         />
       </Host>
     );
+  }
+
+  private updateCSSVariable(variableName: string, value: string) {
+    this.hostElement.style.setProperty(variableName, value);
   }
 
 }
