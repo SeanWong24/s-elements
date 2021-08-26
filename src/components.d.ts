@@ -38,6 +38,9 @@ export namespace Components {
     interface SPopover {
         "isHidden": boolean;
     }
+    interface SRange {
+        "value": number;
+    }
     interface SSelect {
         "color": UIColor;
         "placeholder": string;
@@ -104,6 +107,12 @@ declare global {
         prototype: HTMLSPopoverElement;
         new (): HTMLSPopoverElement;
     };
+    interface HTMLSRangeElement extends Components.SRange, HTMLStencilElement {
+    }
+    var HTMLSRangeElement: {
+        prototype: HTMLSRangeElement;
+        new (): HTMLSRangeElement;
+    };
     interface HTMLSSelectElement extends Components.SSelect, HTMLStencilElement {
     }
     var HTMLSSelectElement: {
@@ -137,6 +146,7 @@ declare global {
         "s-grid-item": HTMLSGridItemElement;
         "s-input": HTMLSInputElement;
         "s-popover": HTMLSPopoverElement;
+        "s-range": HTMLSRangeElement;
         "s-select": HTMLSSelectElement;
         "s-select-option": HTMLSSelectOptionElement;
         "s-toggle": HTMLSToggleElement;
@@ -177,6 +187,11 @@ declare namespace LocalJSX {
     interface SPopover {
         "isHidden"?: boolean;
     }
+    interface SRange {
+        "onSChange"?: (event: CustomEvent<string>) => void;
+        "onSInput"?: (event: CustomEvent<InputEvent>) => void;
+        "value"?: number;
+    }
     interface SSelect {
         "color"?: UIColor;
         "onSChange"?: (event: CustomEvent<string>) => void;
@@ -204,6 +219,7 @@ declare namespace LocalJSX {
         "s-grid-item": SGridItem;
         "s-input": SInput;
         "s-popover": SPopover;
+        "s-range": SRange;
         "s-select": SSelect;
         "s-select-option": SSelectOption;
         "s-toggle": SToggle;
@@ -222,6 +238,7 @@ declare module "@stencil/core" {
             "s-grid-item": LocalJSX.SGridItem & JSXBase.HTMLAttributes<HTMLSGridItemElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
+            "s-range": LocalJSX.SRange & JSXBase.HTMLAttributes<HTMLSRangeElement>;
             "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
             "s-select-option": LocalJSX.SSelectOption & JSXBase.HTMLAttributes<HTMLSSelectOptionElement>;
             "s-toggle": LocalJSX.SToggle & JSXBase.HTMLAttributes<HTMLSToggleElement>;
