@@ -39,6 +39,8 @@ export namespace Components {
         "isHidden": boolean;
     }
     interface SRange {
+        "max": number;
+        "min": number;
         "value": number;
     }
     interface SSelect {
@@ -188,6 +190,8 @@ declare namespace LocalJSX {
         "isHidden"?: boolean;
     }
     interface SRange {
+        "max"?: number;
+        "min"?: number;
         "onSChange"?: (event: CustomEvent<string>) => void;
         "onSInput"?: (event: CustomEvent<InputEvent>) => void;
         "value"?: number;

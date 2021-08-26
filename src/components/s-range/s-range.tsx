@@ -8,6 +8,8 @@ import { Component, Host, h, ComponentInterface, EventEmitter, Prop, Event } fro
 export class SRange implements ComponentInterface {
 
   @Prop({ reflect: true, mutable: true }) value: number = 0;
+  @Prop({ reflect: true }) min: number = 0;
+  @Prop({ reflect: true }) max: number = 100;
 
   @Event() sChange: EventEmitter<string>;
   @Event() sInput: EventEmitter<InputEvent>;
@@ -18,6 +20,9 @@ export class SRange implements ComponentInterface {
         <input
           id="native-element"
           type="range"
+          min={this.min}
+          max={this.max}
+          value={this.value}
           onChange={event => this.sChange.emit((event.currentTarget as HTMLInputElement).value)}
           onInput={(event: InputEvent) => {
             this.value = +(event.currentTarget as HTMLInputElement).value;
