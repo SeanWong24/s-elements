@@ -41,6 +41,7 @@ export namespace Components {
     interface SRange {
         "max": number;
         "min": number;
+        "step": number | '' | 'any';
         "value": number;
     }
     interface SSelect {
@@ -194,6 +195,7 @@ declare namespace LocalJSX {
         "min"?: number;
         "onSChange"?: (event: CustomEvent<string>) => void;
         "onSInput"?: (event: CustomEvent<InputEvent>) => void;
+        "step"?: number | '' | 'any';
         "value"?: number;
     }
     interface SSelect {

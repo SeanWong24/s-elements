@@ -11,6 +11,7 @@ export class SRange implements ComponentInterface {
 
   @Prop({ reflect: true }) min: number = 0;
   @Prop({ reflect: true }) max: number = 100;
+  @Prop({ reflect: true }) step: number | '' | 'any' = '';
 
   @Prop({ reflect: true, mutable: true }) value: number = 0;
 
@@ -35,6 +36,7 @@ export class SRange implements ComponentInterface {
           type="range"
           min={this.min}
           max={this.max}
+          step={this.step}
           value={this.value}
           onChange={event => this.sChange.emit((event.currentTarget as HTMLInputElement).value)}
           onInput={(event: InputEvent) => {
