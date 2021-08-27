@@ -16,16 +16,21 @@ export class SInput implements ComponentInterface {
   render() {
     return (
       <Host>
-        <input
-          id="native-element"
-          value={this.value}
-          placeholder={this.placeholder}
-          onChange={event => this.sChange.emit((event.currentTarget as HTMLInputElement).value)}
-          onInput={(event: InputEvent) => {
-            this.value = (event.currentTarget as HTMLInputElement).value;
-            this.sInput.emit(event);
-          }}
-        />
+        <div id="main-container">
+          <span id="label-container">
+            <slot></slot>
+          </span>
+          <input
+            id="native-element"
+            value={this.value}
+            placeholder={this.placeholder}
+            onChange={event => this.sChange.emit((event.currentTarget as HTMLInputElement).value)}
+            onInput={(event: InputEvent) => {
+              this.value = (event.currentTarget as HTMLInputElement).value;
+              this.sInput.emit(event);
+            }}
+          />
+        </div>
       </Host>
     );
   }
