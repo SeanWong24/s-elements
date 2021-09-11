@@ -35,6 +35,7 @@ export class SSelect implements ComponentInterface {
       const hostElementClientRect = this.hostElement.getBoundingClientRect();
       const dropdownMaxHeight = windowHeight - hostElementClientRect.top - hostElementClientRect.height;
       this.updateCSSVariable('--dropdown-max-height', `${dropdownMaxHeight}px`);
+      this.updateCSSVariable('--dropdown-width', `${hostElementClientRect.width}px`)
       this.addDropdownDismissListenerToBodyElement();
     }
   }
@@ -102,11 +103,21 @@ export class SSelect implements ComponentInterface {
               />
             </svg>
           </s-button>
-          <div id="dropdown">
+          <s-popover
+            id="dropdown"
+            isHidden={this.isDropdownHidden}
+            position={{
+              x: '0',
+              y: 'calc(100% + .5rem)',
+              offsetX: '0',
+              offsetY: '0'
+            }}
+            transformOrigin="calc(100% - 1rem) -1rem"
+          >
             <div>
               <slot></slot>
             </div>
-          </div>
+          </s-popover>
         </div>
       </Host>
     );
