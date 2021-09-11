@@ -9,8 +9,8 @@
   position: fixed;
   left: var(--position-x, 50%);
   top: var(--position-y, 50%);
-  height: 200px;
-  width: 300px;
+  height: auto;
+  width: auto;
   padding: .5rem;
   transform: translateX(var(--position-offset-x)) translateY(var(--position-offset-y)) scale(1);
   background-color: rgba(255, 255, 255, .75);
