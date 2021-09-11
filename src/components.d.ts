@@ -37,6 +37,9 @@ export namespace Components {
     }
     interface SPopover {
         "isHidden": boolean;
+        "position": { x?: string, y?: string, offsetX?: string, offsetY?: string } | string;
+        "transformOrigin": string;
+        "zIndex": number;
     }
     interface SRange {
         "max": number;
@@ -189,6 +192,9 @@ declare namespace LocalJSX {
     }
     interface SPopover {
         "isHidden"?: boolean;
+        "position"?: { x?: string, y?: string, offsetX?: string, offsetY?: string } | string;
+        "transformOrigin"?: string;
+        "zIndex"?: number;
     }
     interface SRange {
         "max"?: number;

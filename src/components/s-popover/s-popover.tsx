@@ -30,8 +30,47 @@ export class SPopover implements ComponentInterface {
     }
   }
 
+  @Prop() position: { x?: string, y?: string, offsetX?: string, offsetY?: string } | string;
+
+  @Watch('position')
+  positionChanged(position: { x?: string, y?: string, offsetX?: string, offsetY?: string } | string) {
+    let x: string;
+    let y: string;
+    let offsetX: string;
+    let offsetY: string;
+    if (typeof position === 'string') {
+      [x, y, offsetX, offsetY] = position?.trim().split(/\s+/);
+    } else {
+      x = position?.x;
+      y = position?.y;
+      offsetX = position?.offsetX;
+      offsetY = position?.offsetY;
+    }
+    this.updateCSSVariable('--position-x', `${x || '50%'}`);
+    this.updateCSSVariable('--position-y', `${y || '50%'}`);
+    this.updateCSSVariable('--position-offset-x', `${offsetX || '-50%'}`);
+    this.updateCSSVariable('--position-offset-y', `${offsetY || '-50%'}`);
+  }
+
+  @Prop() transformOrigin = 'center center';
+
+  @Watch('transformOrigin')
+  transformOriginChanged(transformOrigin: string) {
+    this.updateCSSVariable('--transform-origin', transformOrigin);
+  }  
+
+  @Prop() zIndex = 9999;
+
+  @Watch('zIndex')
+  zIndexChanged(zIndex: number) {
+    this.updateCSSVariable('--z-index', `${zIndex}`);
+  }
+
   connectedCallback() {
     this.updateCSSVariable('--animation-duration', `${this.animationDuration}ms`);
+    this.positionChanged(this.position);
+    this.transformOriginChanged(this.transformOrigin);
+    this.zIndexChanged(this.zIndex);
   }
 
   render() {
