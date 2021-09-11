@@ -1,6 +1,9 @@
 @import '../../global/component.css';
 
 :host {
+  --background: rgba(255, 255, 255, .75);
+  --backdrop-filter: blur(20px);
+
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -12,10 +15,10 @@
   height: auto;
   width: auto;
   transform: translateX(var(--position-offset-x)) translateY(var(--position-offset-y)) scale(1);
-  background-color: rgba(255, 255, 255, .75);
+  background: var(--background);
   border-radius: var(--border-radius);
   box-shadow: 0px 10px 20px 0px var(--shadow-color);
-  backdrop-filter: blur(25px);
+  backdrop-filter: var(--backdrop-filter);
   z-index: var(--z-index);
   transition: transform var(--animation-duration) cubic-bezier(0.5, 0, 0.5, 1.45);
   transform-origin: var(--transform-origin);
