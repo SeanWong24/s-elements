@@ -26,11 +26,13 @@
 ### Depends on
 
 - [s-button](../s-button)
+- [s-popover](../s-popover)
 
 ### Graph
 ```mermaid
 graph TD;
   s-select --> s-button
+  s-select --> s-popover
   style s-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
