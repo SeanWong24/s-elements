@@ -1,0 +1,34 @@
+@import '../../global/component.css';
+
+:host {
+  --border-color: hsl(var(--border-color-hue), var(--border-color-saturation), var(--border-color-lightness));
+
+  display: inline-block;
+}
+
+#main-container {
+  box-sizing: border-box;
+  width: 15rem;
+  padding: .5rem;
+  border-bottom: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transform: scale(1);
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+#main-container:hover {
+  box-shadow: inset 0px 1px 3px 0px var(--shadow-color);
+}
+
+s-popover > div {
+  height: 15rem;
+  width: 15rem;
+  cursor: initial;
+}
+
+s-popover > div > table td {
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}

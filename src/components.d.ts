@@ -19,6 +19,9 @@ export namespace Components {
     interface SCollapse {
         "isHidden": boolean;
     }
+    interface SDatepicker {
+        "value": Date;
+    }
     interface SGrid {
         "columnGap": string;
         "columns": string;
@@ -89,6 +92,12 @@ declare global {
         prototype: HTMLSCollapseElement;
         new (): HTMLSCollapseElement;
     };
+    interface HTMLSDatepickerElement extends Components.SDatepicker, HTMLStencilElement {
+    }
+    var HTMLSDatepickerElement: {
+        prototype: HTMLSDatepickerElement;
+        new (): HTMLSDatepickerElement;
+    };
     interface HTMLSGridElement extends Components.SGrid, HTMLStencilElement {
     }
     var HTMLSGridElement: {
@@ -148,6 +157,7 @@ declare global {
         "s-button": HTMLSButtonElement;
         "s-card": HTMLSCardElement;
         "s-collapse": HTMLSCollapseElement;
+        "s-datepicker": HTMLSDatepickerElement;
         "s-grid": HTMLSGridElement;
         "s-grid-item": HTMLSGridItemElement;
         "s-input": HTMLSInputElement;
@@ -171,6 +181,9 @@ declare namespace LocalJSX {
     }
     interface SCollapse {
         "isHidden"?: boolean;
+    }
+    interface SDatepicker {
+        "value"?: Date;
     }
     interface SGrid {
         "columnGap"?: string;
@@ -227,6 +240,7 @@ declare namespace LocalJSX {
         "s-button": SButton;
         "s-card": SCard;
         "s-collapse": SCollapse;
+        "s-datepicker": SDatepicker;
         "s-grid": SGrid;
         "s-grid-item": SGridItem;
         "s-input": SInput;
@@ -246,6 +260,7 @@ declare module "@stencil/core" {
             "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
             "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
             "s-collapse": LocalJSX.SCollapse & JSXBase.HTMLAttributes<HTMLSCollapseElement>;
+            "s-datepicker": LocalJSX.SDatepicker & JSXBase.HTMLAttributes<HTMLSDatepickerElement>;
             "s-grid": LocalJSX.SGrid & JSXBase.HTMLAttributes<HTMLSGridElement>;
             "s-grid-item": LocalJSX.SGridItem & JSXBase.HTMLAttributes<HTMLSGridItemElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
