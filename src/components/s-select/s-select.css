@@ -62,6 +62,10 @@
   stroke: black;
 }
 
+#select #dropdown {
+  --backdrop-filter: blur(10px);
+}
+
 #select #dropdown > div {
   width: var(--dropdown-width);
   max-height: calc(var(--dropdown-max-height) - .5rem * 2);
