@@ -42,10 +42,9 @@
 }
 
 #select #dropdown-toggle-button {
-  --padding: 0;
-
-  float: right;
-  margin-left: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
   transform: rotate(180deg);
   transition: transform 300ms cubic-bezier(0.5, 0, 0.5, 1.45);
 }
