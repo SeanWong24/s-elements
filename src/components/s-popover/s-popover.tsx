@@ -7,7 +7,7 @@ import { Component, Host, h, ComponentInterface, Prop, Element, Watch } from '@s
 })
 export class SPopover implements ComponentInterface {
 
-  private readonly animationDuration = 500;
+  private readonly animationDuration = 300;
 
   private mainContainer: HTMLDivElement;
 
