@@ -47,12 +47,6 @@ export namespace Components {
         "useBackdrop": boolean;
         "zIndex": number;
     }
-    interface SPopover {
-        "isHidden": boolean;
-        "position": { x?: string, y?: string, offsetX?: string, offsetY?: string } | string;
-        "transformOrigin": string;
-        "zIndex": number;
-    }
     interface SRange {
         "max": number;
         "min": number;
@@ -133,12 +127,6 @@ declare global {
         prototype: HTMLSOverlayElement;
         new (): HTMLSOverlayElement;
     };
-    interface HTMLSPopoverElement extends Components.SPopover, HTMLStencilElement {
-    }
-    var HTMLSPopoverElement: {
-        prototype: HTMLSPopoverElement;
-        new (): HTMLSPopoverElement;
-    };
     interface HTMLSRangeElement extends Components.SRange, HTMLStencilElement {
     }
     var HTMLSRangeElement: {
@@ -179,7 +167,6 @@ declare global {
         "s-grid-item": HTMLSGridItemElement;
         "s-input": HTMLSInputElement;
         "s-overlay": HTMLSOverlayElement;
-        "s-popover": HTMLSPopoverElement;
         "s-range": HTMLSRangeElement;
         "s-select": HTMLSSelectElement;
         "s-select-option": HTMLSSelectOptionElement;
@@ -229,12 +216,6 @@ declare namespace LocalJSX {
         "useBackdrop"?: boolean;
         "zIndex"?: number;
     }
-    interface SPopover {
-        "isHidden"?: boolean;
-        "position"?: { x?: string, y?: string, offsetX?: string, offsetY?: string } | string;
-        "transformOrigin"?: string;
-        "zIndex"?: number;
-    }
     interface SRange {
         "max"?: number;
         "min"?: number;
@@ -273,7 +254,6 @@ declare namespace LocalJSX {
         "s-grid-item": SGridItem;
         "s-input": SInput;
         "s-overlay": SOverlay;
-        "s-popover": SPopover;
         "s-range": SRange;
         "s-select": SSelect;
         "s-select-option": SSelectOption;
@@ -294,7 +274,6 @@ declare module "@stencil/core" {
             "s-grid-item": LocalJSX.SGridItem & JSXBase.HTMLAttributes<HTMLSGridItemElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
             "s-overlay": LocalJSX.SOverlay & JSXBase.HTMLAttributes<HTMLSOverlayElement>;
-            "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
             "s-range": LocalJSX.SRange & JSXBase.HTMLAttributes<HTMLSRangeElement>;
             "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
             "s-select-option": LocalJSX.SSelectOption & JSXBase.HTMLAttributes<HTMLSSelectOptionElement>;
