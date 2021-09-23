@@ -48,11 +48,6 @@
               const overlay = document.querySelector('#overlay-element');
               overlay.useBackdrop = detail;
             });
-        </script> </div> <div id="popover"> <h2>Popover</h2> <s-popover position="50px 50% 0 0 fixed" transform-origin="left"> <div style="width: 300px; height: 150px;"> <h1>This is a popover</h1> <p>Some content here...</p> <s-button onclick="togglePopover()">Toogle Popover</s-button> </div> </s-popover> <s-button fill="outline" onclick="togglePopover()">Toogle Popover</s-button> <script>
-          function togglePopover() {
-            const popover = document.querySelector('s-popover');
-            popover.isHidden = !popover.isHidden;
-          }
         </script> </div> <div id="range"> <h2>Range</h2> <s-range min="-10" max="10" value="5" step="any"></s-range> </div> <div id="select"> <h2>Select</h2> <s-select id="select-element" placeholder="Select one" style="width: 150px;"> <s-select-option value="primary">Primary</s-select-option> <s-select-option value="secondary">Secondary</s-select-option> <s-select-option value="tertiary">Tertiary</s-select-option> <s-select-option value="success">Success</s-select-option> <s-select-option value="warning">Warning</s-select-option> <s-select-option value="danger">Danger</s-select-option> </s-select> <script>
           document.querySelector('#select-element')
             .addEventListener('sChange', updateSelectElementColor);
