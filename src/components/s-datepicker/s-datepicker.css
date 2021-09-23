@@ -21,14 +21,3 @@
 #main-container:hover {
   box-shadow: inset 0px 1px 3px 0px var(--shadow-color);
 }
-
-s-popover > div {
-  height: 15rem;
-  width: 15rem;
-  cursor: initial;
-}
-
-s-popover > div > table td {
-  border-radius: var(--border-radius);
-  cursor: pointer;
-}

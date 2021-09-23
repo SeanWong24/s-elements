@@ -1,4 +1,4 @@
-import { Component, Host, h, ComponentInterface, Prop, State } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Prop, State, Element } from '@stencil/core';
 
 @Component({
   tag: 's-datepicker',
@@ -6,6 +6,8 @@ import { Component, Host, h, ComponentInterface, Prop, State } from '@stencil/co
   shadow: true,
 })
 export class SDatepicker implements ComponentInterface {
+
+  @Element() hostElement: HTMLSDatepickerElement;
 
   @State() isPopoverHidden = true;
 
@@ -31,18 +33,25 @@ export class SDatepicker implements ComponentInterface {
       <Host>
         <div id="main-container" onClick={() => this.isPopoverHidden = !this.isPopoverHidden}>
           {`${this.value.getFullYear()} - ${`0${this.value.getMonth() + 1}`.slice(-2)} - ${this.value.getDate()}`}
-          <s-popover
-            isHidden={this.isPopoverHidden}
+          <s-overlay
+            showed={!this.isPopoverHidden}
             position={{
-              x: '0',
-              y: 'calc(100% + .5rem)',
+              x: `${this.hostElement.offsetLeft}px`,
+              y: `${this.hostElement.offsetTop + this.hostElement.offsetHeight}px`,
               offsetX: '0',
-              offsetY: '0'
+              offsetY: '.5rem',
+              type: 'absolute'
             }}
             transformOrigin="top"
+            minimizedScale="1 .001"
           >
             <div>
-              <table style={{ height: '100%', width: '100%' }}>
+              <table
+                style={{
+                  height: '15rem',
+                  width: `${this.hostElement.offsetWidth}px`,
+                  textAlign: 'center'
+                }}>
                 <thead>
                   <tr>
                     {
@@ -64,7 +73,9 @@ export class SDatepicker implements ComponentInterface {
                             return (
                               <td style={{
                                 color: isTheSelectedMonth ? 'black' : 'grey',
-                                backgroundColor: isTheSelectedDate ? 'deepskyblue' : ''
+                                backgroundColor: isTheSelectedDate ? 'deepskyblue' : '',
+                                borderRadius: getComputedStyle(this.hostElement).getPropertyValue('--border-radius'),
+                                cursor: 'pointer'
                               }}>{date.day}</td>
                             );
                           })
@@ -75,7 +86,7 @@ export class SDatepicker implements ComponentInterface {
                 </tbody>
               </table>
             </div>
-          </s-popover>
+          </s-overlay>
         </div>
       </Host>
     );
