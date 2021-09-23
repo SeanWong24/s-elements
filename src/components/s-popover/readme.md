@@ -15,19 +15,6 @@
 | `zIndex`          | `z-index`          |             | `number`                                                                    | `9999`            |
 
 
-## Dependencies
-
-### Used by
-
- - [s-select](../s-select)
-
-### Graph
-```mermaid
-graph TD;
-  s-select --> s-popover
-  style s-popover fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -8,8 +8,15 @@ import { UIColor } from '../../global/ui-color';
 })
 export class SSelect implements ComponentInterface {
 
+  private readonly CHILD_SELECT_OPTION_TAG_NAME = 's-select-option';
+
   private get selectOptionElements() {
-    return Array.from(this.hostElement.querySelectorAll('s-select-option'));
+    let elements = Array.from(this.hostElement.querySelectorAll(this.CHILD_SELECT_OPTION_TAG_NAME));
+    if (elements.length < 1) {
+      elements = this.selectOptionElementsBackup;
+    }
+    return elements;
+
   }
 
   private get selectedOptionElement() {
@@ -22,6 +29,9 @@ export class SSelect implements ComponentInterface {
     return this.selectedOptionElement?.innerText || this.selectedOptionElement?.value;
   }
 
+  private dropdownContainer: HTMLDivElement;
+  private selectOptionElementsBackup: HTMLSSelectOptionElement[];
+
   @Element() hostElement: HTMLSSelectElement;
 
   @State() isDropdownHidden = true;
@@ -30,6 +40,7 @@ export class SSelect implements ComponentInterface {
   isDropdownHiddenChanged(isDropdownHidden: boolean) {
     if (isDropdownHidden) {
       this.removeDropdownDismissListenerToBodyElement();
+      this.selectOptionElementsBackup?.forEach(element => this.hostElement.appendChild(element));
     } else {
       const windowHeight = window.innerHeight;
       const hostElementClientRect = this.hostElement.getBoundingClientRect();
@@ -37,6 +48,12 @@ export class SSelect implements ComponentInterface {
       this.updateCSSVariable('--dropdown-max-height', `${dropdownMaxHeight}px`);
       this.updateCSSVariable('--dropdown-width', `${hostElementClientRect.width}px`)
       this.addDropdownDismissListenerToBodyElement();
+      this.selectOptionElementsBackup = this.selectOptionElements;
+      this.selectOptionElements.forEach(element => {
+        element.parentSelectElement = this.hostElement;
+        element.highlightColor = this.hostElement.style.getPropertyValue('--highlight-color');
+        this.dropdownContainer?.appendChild(element);
+      })
     }
   }
 
@@ -103,21 +120,30 @@ export class SSelect implements ComponentInterface {
               />
             </svg>
           </s-button>
-          <s-popover
+          <s-overlay
             id="dropdown"
-            isHidden={this.isDropdownHidden}
+            style={{
+              '--backdrop-filter': 'blur(10px)'
+            }}
+            showed={!this.isDropdownHidden}
             position={{
-              x: '0',
-              y: 'calc(100% + .5rem)',
+              x: this.hostElement.offsetLeft + 'px',
+              y: this.hostElement.offsetTop + this.hostElement.offsetHeight + 'px',
               offsetX: '0',
-              offsetY: '0'
+              offsetY: '.25rem',
+              type: 'absolute'
             }}
             transformOrigin="calc(100% - 1rem) -1rem"
           >
-            <div>
-              <slot></slot>
-            </div>
-          </s-popover>
+            <div
+              ref={el => this.dropdownContainer = el}
+              style={{
+                width: this.hostElement.style.getPropertyValue('--dropdown-width'),
+                maxHeight: `calc(${this.hostElement.style.getPropertyValue('--dropdown-max-height')} - .5rem * 2)`,
+                overflowY: 'auto'
+              }}
+            ></div>
+          </s-overlay>
         </div>
       </Host>
     );

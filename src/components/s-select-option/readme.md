@@ -7,10 +7,12 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type      | Default     |
-| ------------ | ------------- | ----------- | --------- | ----------- |
-| `isSelected` | `is-selected` |             | `boolean` | `false`     |
-| `value`      | `value`       |             | `string`  | `undefined` |
+| Property              | Attribute         | Description | Type                 | Default     |
+| --------------------- | ----------------- | ----------- | -------------------- | ----------- |
+| `highlightColor`      | `highlight-color` |             | `string`             | `undefined` |
+| `isSelected`          | `is-selected`     |             | `boolean`            | `false`     |
+| `parentSelectElement` | --                |             | `HTMLSSelectElement` | `undefined` |
+| `value`               | `value`           |             | `string`             | `undefined` |
 
 
 ----------------------------------------------

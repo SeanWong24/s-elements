@@ -1,4 +1,4 @@
-import { Component, Host, h, ComponentInterface, Prop, Element } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Prop, Element, Watch } from '@stencil/core';
 
 @Component({
   tag: 's-select-option',
@@ -11,15 +11,17 @@ export class SSelectOption implements ComponentInterface {
     return this.value || this.hostElement.innerText;
   }
 
-  private get parentSelectElement() {
-    const parent = this.hostElement.parentElement;
-    return parent.tagName.toLowerCase() === 's-select' ? (parent as HTMLSSelectElement) : undefined;
-  }
-
   @Element() hostElement: HTMLSSelectOptionElement;
 
   @Prop() value: string;
   @Prop() isSelected = false;
+  @Prop() parentSelectElement: HTMLSSelectElement;
+
+  @Prop() highlightColor: string;
+  @Watch('highlightColor')
+  highlightColorChanged(value: string) {
+    this.updateCSSVariable('--highlight-color', value);
+  }
 
   render() {
     return (
@@ -32,6 +34,10 @@ export class SSelectOption implements ComponentInterface {
         </div>
       </Host>
     );
+  }
+
+  private updateCSSVariable(variableName: string, value: string) {
+    this.hostElement.style.setProperty(variableName, value);
   }
 
 }

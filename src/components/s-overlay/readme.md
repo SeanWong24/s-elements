@@ -22,11 +22,13 @@
 ### Used by
 
  - [s-datepicker](../s-datepicker)
+ - [s-select](../s-select)
 
 ### Graph
 ```mermaid
 graph TD;
   s-datepicker --> s-overlay
+  s-select --> s-overlay
   style s-overlay fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

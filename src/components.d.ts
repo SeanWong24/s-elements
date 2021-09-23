@@ -65,7 +65,9 @@ export namespace Components {
         "value": string;
     }
     interface SSelectOption {
+        "highlightColor": string;
         "isSelected": boolean;
+        "parentSelectElement": HTMLSSelectElement;
         "value": string;
     }
     interface SToggle {
@@ -248,7 +250,9 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface SSelectOption {
+        "highlightColor"?: string;
         "isSelected"?: boolean;
+        "parentSelectElement"?: HTMLSSelectElement;
         "value"?: string;
     }
     interface SToggle {
