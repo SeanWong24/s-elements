@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 's-elements',
+  namespace: 'vivid-elements',
   outputTargets: [
     {
       type: 'dist',

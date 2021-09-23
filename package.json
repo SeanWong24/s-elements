@@ -1,7 +1,7 @@
 {
-  "name": "s-elements",
+  "name": "vivid-elements",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Vivid-Elements",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/custom-elements/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/s-elements/s-elements.esm.js",
+  "unpkg": "dist/vivid-elements/vivid-elements.esm.js",
   "files": [
     "dist/",
     "loader/"

@@ -6,40 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { UIColor } from "./global/ui-color";
-import { OverlayPosition } from "./components/s-overlay/s-overlay";
+import { OverlayPosition } from "./components/vivid-overlay/vivid-overlay";
 export namespace Components {
-    interface SBadge {
+    interface VividBadge {
         "color": UIColor;
     }
-    interface SButton {
+    interface VividButton {
         "color": UIColor;
         "fill": 'default' | 'outline' | 'clear';
     }
-    interface SCard {
+    interface VividCard {
     }
-    interface SCollapse {
+    interface VividCollapse {
         "isHidden": boolean;
     }
-    interface SDatepicker {
+    interface VividDatepicker {
         "value": Date;
     }
-    interface SGrid {
+    interface VividGrid {
         "columnGap": string;
         "columns": string;
         "rowGap": string;
         "rows": string;
     }
-    interface SGridItem {
+    interface VividGridItem {
         "column": number;
         "columnSpan": number;
         "row": number;
         "rowSpan": number;
     }
-    interface SInput {
+    interface VividInput {
         "placeholder": string;
         "value": string;
     }
-    interface SOverlay {
+    interface VividOverlay {
         "minimizedScale": string;
         "position": OverlayPosition | string;
         "showed": boolean;
@@ -47,168 +47,168 @@ export namespace Components {
         "useBackdrop": boolean;
         "zIndex": number;
     }
-    interface SRange {
+    interface VividRange {
         "max": number;
         "min": number;
         "step": number | '' | 'any';
         "value": number;
     }
-    interface SSelect {
+    interface VividSelect {
         "color": UIColor;
         "placeholder": string;
         "value": string;
     }
-    interface SSelectOption {
+    interface VividSelectOption {
         "highlightColor": string;
         "isSelected": boolean;
-        "parentSelectElement": HTMLSSelectElement;
+        "parentSelectElement": HTMLVividSelectElement;
         "value": string;
     }
-    interface SToggle {
+    interface VividToggle {
         "checked": boolean;
         "color": UIColor;
         "scale": number;
     }
-    interface SUi {
+    interface VividUi {
     }
 }
 declare global {
-    interface HTMLSBadgeElement extends Components.SBadge, HTMLStencilElement {
+    interface HTMLVividBadgeElement extends Components.VividBadge, HTMLStencilElement {
     }
-    var HTMLSBadgeElement: {
-        prototype: HTMLSBadgeElement;
-        new (): HTMLSBadgeElement;
+    var HTMLVividBadgeElement: {
+        prototype: HTMLVividBadgeElement;
+        new (): HTMLVividBadgeElement;
     };
-    interface HTMLSButtonElement extends Components.SButton, HTMLStencilElement {
+    interface HTMLVividButtonElement extends Components.VividButton, HTMLStencilElement {
     }
-    var HTMLSButtonElement: {
-        prototype: HTMLSButtonElement;
-        new (): HTMLSButtonElement;
+    var HTMLVividButtonElement: {
+        prototype: HTMLVividButtonElement;
+        new (): HTMLVividButtonElement;
     };
-    interface HTMLSCardElement extends Components.SCard, HTMLStencilElement {
+    interface HTMLVividCardElement extends Components.VividCard, HTMLStencilElement {
     }
-    var HTMLSCardElement: {
-        prototype: HTMLSCardElement;
-        new (): HTMLSCardElement;
+    var HTMLVividCardElement: {
+        prototype: HTMLVividCardElement;
+        new (): HTMLVividCardElement;
     };
-    interface HTMLSCollapseElement extends Components.SCollapse, HTMLStencilElement {
+    interface HTMLVividCollapseElement extends Components.VividCollapse, HTMLStencilElement {
     }
-    var HTMLSCollapseElement: {
-        prototype: HTMLSCollapseElement;
-        new (): HTMLSCollapseElement;
+    var HTMLVividCollapseElement: {
+        prototype: HTMLVividCollapseElement;
+        new (): HTMLVividCollapseElement;
     };
-    interface HTMLSDatepickerElement extends Components.SDatepicker, HTMLStencilElement {
+    interface HTMLVividDatepickerElement extends Components.VividDatepicker, HTMLStencilElement {
     }
-    var HTMLSDatepickerElement: {
-        prototype: HTMLSDatepickerElement;
-        new (): HTMLSDatepickerElement;
+    var HTMLVividDatepickerElement: {
+        prototype: HTMLVividDatepickerElement;
+        new (): HTMLVividDatepickerElement;
     };
-    interface HTMLSGridElement extends Components.SGrid, HTMLStencilElement {
+    interface HTMLVividGridElement extends Components.VividGrid, HTMLStencilElement {
     }
-    var HTMLSGridElement: {
-        prototype: HTMLSGridElement;
-        new (): HTMLSGridElement;
+    var HTMLVividGridElement: {
+        prototype: HTMLVividGridElement;
+        new (): HTMLVividGridElement;
     };
-    interface HTMLSGridItemElement extends Components.SGridItem, HTMLStencilElement {
+    interface HTMLVividGridItemElement extends Components.VividGridItem, HTMLStencilElement {
     }
-    var HTMLSGridItemElement: {
-        prototype: HTMLSGridItemElement;
-        new (): HTMLSGridItemElement;
+    var HTMLVividGridItemElement: {
+        prototype: HTMLVividGridItemElement;
+        new (): HTMLVividGridItemElement;
     };
-    interface HTMLSInputElement extends Components.SInput, HTMLStencilElement {
+    interface HTMLVividInputElement extends Components.VividInput, HTMLStencilElement {
     }
-    var HTMLSInputElement: {
-        prototype: HTMLSInputElement;
-        new (): HTMLSInputElement;
+    var HTMLVividInputElement: {
+        prototype: HTMLVividInputElement;
+        new (): HTMLVividInputElement;
     };
-    interface HTMLSOverlayElement extends Components.SOverlay, HTMLStencilElement {
+    interface HTMLVividOverlayElement extends Components.VividOverlay, HTMLStencilElement {
     }
-    var HTMLSOverlayElement: {
-        prototype: HTMLSOverlayElement;
-        new (): HTMLSOverlayElement;
+    var HTMLVividOverlayElement: {
+        prototype: HTMLVividOverlayElement;
+        new (): HTMLVividOverlayElement;
     };
-    interface HTMLSRangeElement extends Components.SRange, HTMLStencilElement {
+    interface HTMLVividRangeElement extends Components.VividRange, HTMLStencilElement {
     }
-    var HTMLSRangeElement: {
-        prototype: HTMLSRangeElement;
-        new (): HTMLSRangeElement;
+    var HTMLVividRangeElement: {
+        prototype: HTMLVividRangeElement;
+        new (): HTMLVividRangeElement;
     };
-    interface HTMLSSelectElement extends Components.SSelect, HTMLStencilElement {
+    interface HTMLVividSelectElement extends Components.VividSelect, HTMLStencilElement {
     }
-    var HTMLSSelectElement: {
-        prototype: HTMLSSelectElement;
-        new (): HTMLSSelectElement;
+    var HTMLVividSelectElement: {
+        prototype: HTMLVividSelectElement;
+        new (): HTMLVividSelectElement;
     };
-    interface HTMLSSelectOptionElement extends Components.SSelectOption, HTMLStencilElement {
+    interface HTMLVividSelectOptionElement extends Components.VividSelectOption, HTMLStencilElement {
     }
-    var HTMLSSelectOptionElement: {
-        prototype: HTMLSSelectOptionElement;
-        new (): HTMLSSelectOptionElement;
+    var HTMLVividSelectOptionElement: {
+        prototype: HTMLVividSelectOptionElement;
+        new (): HTMLVividSelectOptionElement;
     };
-    interface HTMLSToggleElement extends Components.SToggle, HTMLStencilElement {
+    interface HTMLVividToggleElement extends Components.VividToggle, HTMLStencilElement {
     }
-    var HTMLSToggleElement: {
-        prototype: HTMLSToggleElement;
-        new (): HTMLSToggleElement;
+    var HTMLVividToggleElement: {
+        prototype: HTMLVividToggleElement;
+        new (): HTMLVividToggleElement;
     };
-    interface HTMLSUiElement extends Components.SUi, HTMLStencilElement {
+    interface HTMLVividUiElement extends Components.VividUi, HTMLStencilElement {
     }
-    var HTMLSUiElement: {
-        prototype: HTMLSUiElement;
-        new (): HTMLSUiElement;
+    var HTMLVividUiElement: {
+        prototype: HTMLVividUiElement;
+        new (): HTMLVividUiElement;
     };
     interface HTMLElementTagNameMap {
-        "s-badge": HTMLSBadgeElement;
-        "s-button": HTMLSButtonElement;
-        "s-card": HTMLSCardElement;
-        "s-collapse": HTMLSCollapseElement;
-        "s-datepicker": HTMLSDatepickerElement;
-        "s-grid": HTMLSGridElement;
-        "s-grid-item": HTMLSGridItemElement;
-        "s-input": HTMLSInputElement;
-        "s-overlay": HTMLSOverlayElement;
-        "s-range": HTMLSRangeElement;
-        "s-select": HTMLSSelectElement;
-        "s-select-option": HTMLSSelectOptionElement;
-        "s-toggle": HTMLSToggleElement;
-        "s-ui": HTMLSUiElement;
+        "vivid-badge": HTMLVividBadgeElement;
+        "vivid-button": HTMLVividButtonElement;
+        "vivid-card": HTMLVividCardElement;
+        "vivid-collapse": HTMLVividCollapseElement;
+        "vivid-datepicker": HTMLVividDatepickerElement;
+        "vivid-grid": HTMLVividGridElement;
+        "vivid-grid-item": HTMLVividGridItemElement;
+        "vivid-input": HTMLVividInputElement;
+        "vivid-overlay": HTMLVividOverlayElement;
+        "vivid-range": HTMLVividRangeElement;
+        "vivid-select": HTMLVividSelectElement;
+        "vivid-select-option": HTMLVividSelectOptionElement;
+        "vivid-toggle": HTMLVividToggleElement;
+        "vivid-ui": HTMLVividUiElement;
     }
 }
 declare namespace LocalJSX {
-    interface SBadge {
+    interface VividBadge {
         "color"?: UIColor;
     }
-    interface SButton {
+    interface VividButton {
         "color"?: UIColor;
         "fill"?: 'default' | 'outline' | 'clear';
     }
-    interface SCard {
+    interface VividCard {
     }
-    interface SCollapse {
+    interface VividCollapse {
         "isHidden"?: boolean;
     }
-    interface SDatepicker {
+    interface VividDatepicker {
         "value"?: Date;
     }
-    interface SGrid {
+    interface VividGrid {
         "columnGap"?: string;
         "columns"?: string;
         "rowGap"?: string;
         "rows"?: string;
     }
-    interface SGridItem {
+    interface VividGridItem {
         "column"?: number;
         "columnSpan"?: number;
         "row"?: number;
         "rowSpan"?: number;
     }
-    interface SInput {
+    interface VividInput {
         "onSChange"?: (event: CustomEvent<string>) => void;
         "onSInput"?: (event: CustomEvent<InputEvent>) => void;
         "placeholder"?: string;
         "value"?: string;
     }
-    interface SOverlay {
+    interface VividOverlay {
         "minimizedScale"?: string;
         "position"?: OverlayPosition | string;
         "showed"?: boolean;
@@ -216,7 +216,7 @@ declare namespace LocalJSX {
         "useBackdrop"?: boolean;
         "zIndex"?: number;
     }
-    interface SRange {
+    interface VividRange {
         "max"?: number;
         "min"?: number;
         "onSChange"?: (event: CustomEvent<string>) => void;
@@ -224,61 +224,61 @@ declare namespace LocalJSX {
         "step"?: number | '' | 'any';
         "value"?: number;
     }
-    interface SSelect {
+    interface VividSelect {
         "color"?: UIColor;
         "onSChange"?: (event: CustomEvent<string>) => void;
         "placeholder"?: string;
         "value"?: string;
     }
-    interface SSelectOption {
+    interface VividSelectOption {
         "highlightColor"?: string;
         "isSelected"?: boolean;
-        "parentSelectElement"?: HTMLSSelectElement;
+        "parentSelectElement"?: HTMLVividSelectElement;
         "value"?: string;
     }
-    interface SToggle {
+    interface VividToggle {
         "checked"?: boolean;
         "color"?: UIColor;
         "onSChange"?: (event: CustomEvent<boolean>) => void;
         "scale"?: number;
     }
-    interface SUi {
+    interface VividUi {
     }
     interface IntrinsicElements {
-        "s-badge": SBadge;
-        "s-button": SButton;
-        "s-card": SCard;
-        "s-collapse": SCollapse;
-        "s-datepicker": SDatepicker;
-        "s-grid": SGrid;
-        "s-grid-item": SGridItem;
-        "s-input": SInput;
-        "s-overlay": SOverlay;
-        "s-range": SRange;
-        "s-select": SSelect;
-        "s-select-option": SSelectOption;
-        "s-toggle": SToggle;
-        "s-ui": SUi;
+        "vivid-badge": VividBadge;
+        "vivid-button": VividButton;
+        "vivid-card": VividCard;
+        "vivid-collapse": VividCollapse;
+        "vivid-datepicker": VividDatepicker;
+        "vivid-grid": VividGrid;
+        "vivid-grid-item": VividGridItem;
+        "vivid-input": VividInput;
+        "vivid-overlay": VividOverlay;
+        "vivid-range": VividRange;
+        "vivid-select": VividSelect;
+        "vivid-select-option": VividSelectOption;
+        "vivid-toggle": VividToggle;
+        "vivid-ui": VividUi;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "s-badge": LocalJSX.SBadge & JSXBase.HTMLAttributes<HTMLSBadgeElement>;
-            "s-button": LocalJSX.SButton & JSXBase.HTMLAttributes<HTMLSButtonElement>;
-            "s-card": LocalJSX.SCard & JSXBase.HTMLAttributes<HTMLSCardElement>;
-            "s-collapse": LocalJSX.SCollapse & JSXBase.HTMLAttributes<HTMLSCollapseElement>;
-            "s-datepicker": LocalJSX.SDatepicker & JSXBase.HTMLAttributes<HTMLSDatepickerElement>;
-            "s-grid": LocalJSX.SGrid & JSXBase.HTMLAttributes<HTMLSGridElement>;
-            "s-grid-item": LocalJSX.SGridItem & JSXBase.HTMLAttributes<HTMLSGridItemElement>;
-            "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
-            "s-overlay": LocalJSX.SOverlay & JSXBase.HTMLAttributes<HTMLSOverlayElement>;
-            "s-range": LocalJSX.SRange & JSXBase.HTMLAttributes<HTMLSRangeElement>;
-            "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
-            "s-select-option": LocalJSX.SSelectOption & JSXBase.HTMLAttributes<HTMLSSelectOptionElement>;
-            "s-toggle": LocalJSX.SToggle & JSXBase.HTMLAttributes<HTMLSToggleElement>;
-            "s-ui": LocalJSX.SUi & JSXBase.HTMLAttributes<HTMLSUiElement>;
+            "vivid-badge": LocalJSX.VividBadge & JSXBase.HTMLAttributes<HTMLVividBadgeElement>;
+            "vivid-button": LocalJSX.VividButton & JSXBase.HTMLAttributes<HTMLVividButtonElement>;
+            "vivid-card": LocalJSX.VividCard & JSXBase.HTMLAttributes<HTMLVividCardElement>;
+            "vivid-collapse": LocalJSX.VividCollapse & JSXBase.HTMLAttributes<HTMLVividCollapseElement>;
+            "vivid-datepicker": LocalJSX.VividDatepicker & JSXBase.HTMLAttributes<HTMLVividDatepickerElement>;
+            "vivid-grid": LocalJSX.VividGrid & JSXBase.HTMLAttributes<HTMLVividGridElement>;
+            "vivid-grid-item": LocalJSX.VividGridItem & JSXBase.HTMLAttributes<HTMLVividGridItemElement>;
+            "vivid-input": LocalJSX.VividInput & JSXBase.HTMLAttributes<HTMLVividInputElement>;
+            "vivid-overlay": LocalJSX.VividOverlay & JSXBase.HTMLAttributes<HTMLVividOverlayElement>;
+            "vivid-range": LocalJSX.VividRange & JSXBase.HTMLAttributes<HTMLVividRangeElement>;
+            "vivid-select": LocalJSX.VividSelect & JSXBase.HTMLAttributes<HTMLVividSelectElement>;
+            "vivid-select-option": LocalJSX.VividSelectOption & JSXBase.HTMLAttributes<HTMLVividSelectOptionElement>;
+            "vivid-toggle": LocalJSX.VividToggle & JSXBase.HTMLAttributes<HTMLVividToggleElement>;
+            "vivid-ui": LocalJSX.VividUi & JSXBase.HTMLAttributes<HTMLVividUiElement>;
         }
     }
 }
