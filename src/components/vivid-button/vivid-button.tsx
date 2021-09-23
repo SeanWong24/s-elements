@@ -1,6 +1,8 @@
 import { Component, Host, h, ComponentInterface, Prop, Element, Watch } from '@stencil/core';
 import { UIColor } from '../../global/ui-color';
 
+export type ButtonVariant = 'solid' | 'outline' | 'clear';
+
 @Component({
   tag: 'vivid-button',
   styleUrl: 'vivid-button.css',
@@ -10,7 +12,7 @@ export class VividButton implements ComponentInterface {
 
   @Element() hostElement: HTMLVividButtonElement;
 
-  @Prop() fill: 'default' | 'outline' | 'clear' = 'default';
+  @Prop() variant: ButtonVariant = 'solid';
   
   @Prop({ reflect: true }) color: UIColor = 'primary';
 
@@ -29,7 +31,7 @@ export class VividButton implements ComponentInterface {
   render() {
     return (
       <Host>
-        <button id="native-element" class={`fill-${this.fill}`}>
+        <button id="native-element" class={this.variant}>
           <slot></slot>
         </button>
       </Host>

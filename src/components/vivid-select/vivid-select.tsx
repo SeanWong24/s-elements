@@ -109,7 +109,7 @@ export class VividSelect implements ComponentInterface {
           }
           <vivid-button
             id="dropdown-toggle-button"
-            fill="clear"
+            variant="clear"
           >
             <svg width="1rem" height="1rem" viewBox="0 0 100 100">
               <path

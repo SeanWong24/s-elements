@@ -25,20 +25,20 @@
   transition: all 300ms ease;
 }
 
-#native-element.fill-default {
+#native-element.solid {
   color: var(--secondary-color);
   background-color: var(--color);
   border: none;
 }
 
-#native-element.fill-outline {
+#native-element.outline {
   position: relative;
   color: var(--color);
   background-color: transparent;
   border: none;
 }
 
-#native-element.fill-outline::before {
+#native-element.outline::before {
   content: '';
   position: absolute;
   border-radius: var(--border-radius);
@@ -49,28 +49,28 @@
   width: calc(100% - 2px * 2);
 }
 
-#native-element.fill-clear {
+#native-element.clear {
   color: var(--color);
   background-color: transparent;
   border: none;
 }
 
-#native-element.fill-default:hover,
-#native-element.fill-outline:hover {
+#native-element.solid:hover,
+#native-element.outline:hover {
   box-shadow: 0px 2px 5px 0px var(--shadow-color);
 }
 
-#native-element.fill-clear:hover {
+#native-element.clear:hover {
   transform: scale(1.1);
   text-shadow: 0px 2px 5px var(--shadow-color);
 }
 
-#native-element.fill-default:active,
-#native-element.fill-outline:active {
+#native-element.solid:active,
+#native-element.outline:active {
   box-shadow: inset 0px 2px 5px 0px var(--shadow-color);
 }
 
-#native-element.fill-clear:active {
+#native-element.clear:active {
   transform: scale(.95);
   text-shadow: 0px -1px 1px var(--shadow-color);
 }

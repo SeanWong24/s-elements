@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { UIColor } from "./global/ui-color";
+import { ButtonVariant } from "./components/vivid-button/vivid-button";
 import { OverlayPosition } from "./components/vivid-overlay/vivid-overlay";
 export namespace Components {
     interface VividBadge {
@@ -13,7 +14,7 @@ export namespace Components {
     }
     interface VividButton {
         "color": UIColor;
-        "fill": 'default' | 'outline' | 'clear';
+        "variant": ButtonVariant;
     }
     interface VividCard {
     }
@@ -189,7 +190,7 @@ declare namespace LocalJSX {
     }
     interface VividButton {
         "color"?: UIColor;
-        "fill"?: 'default' | 'outline' | 'clear';
+        "variant"?: ButtonVariant;
     }
     interface VividCard {
     }
