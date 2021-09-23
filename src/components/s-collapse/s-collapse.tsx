@@ -11,7 +11,7 @@ export class SCollapse implements ComponentInterface {
 
   private mainContainer: HTMLDivElement;
 
-  @Element() hostElement: HTMLSPopoverElement;
+  @Element() hostElement: HTMLSCollapseElement;
 
   @Prop() isHidden = true;
 
