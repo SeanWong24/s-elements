@@ -20,6 +20,8 @@ export namespace Components {
     interface VividCollapse {
         "isHidden": boolean;
     }
+    interface VividContainer {
+    }
     interface VividDatepicker {
         "value": Date;
     }
@@ -97,6 +99,12 @@ declare global {
         prototype: HTMLVividCollapseElement;
         new (): HTMLVividCollapseElement;
     };
+    interface HTMLVividContainerElement extends Components.VividContainer, HTMLStencilElement {
+    }
+    var HTMLVividContainerElement: {
+        prototype: HTMLVividContainerElement;
+        new (): HTMLVividContainerElement;
+    };
     interface HTMLVividDatepickerElement extends Components.VividDatepicker, HTMLStencilElement {
     }
     var HTMLVividDatepickerElement: {
@@ -162,6 +170,7 @@ declare global {
         "vivid-button": HTMLVividButtonElement;
         "vivid-card": HTMLVividCardElement;
         "vivid-collapse": HTMLVividCollapseElement;
+        "vivid-container": HTMLVividContainerElement;
         "vivid-datepicker": HTMLVividDatepickerElement;
         "vivid-grid": HTMLVividGridElement;
         "vivid-grid-item": HTMLVividGridItemElement;
@@ -186,6 +195,8 @@ declare namespace LocalJSX {
     }
     interface VividCollapse {
         "isHidden"?: boolean;
+    }
+    interface VividContainer {
     }
     interface VividDatepicker {
         "value"?: Date;
@@ -249,6 +260,7 @@ declare namespace LocalJSX {
         "vivid-button": VividButton;
         "vivid-card": VividCard;
         "vivid-collapse": VividCollapse;
+        "vivid-container": VividContainer;
         "vivid-datepicker": VividDatepicker;
         "vivid-grid": VividGrid;
         "vivid-grid-item": VividGridItem;
@@ -269,6 +281,7 @@ declare module "@stencil/core" {
             "vivid-button": LocalJSX.VividButton & JSXBase.HTMLAttributes<HTMLVividButtonElement>;
             "vivid-card": LocalJSX.VividCard & JSXBase.HTMLAttributes<HTMLVividCardElement>;
             "vivid-collapse": LocalJSX.VividCollapse & JSXBase.HTMLAttributes<HTMLVividCollapseElement>;
+            "vivid-container": LocalJSX.VividContainer & JSXBase.HTMLAttributes<HTMLVividContainerElement>;
             "vivid-datepicker": LocalJSX.VividDatepicker & JSXBase.HTMLAttributes<HTMLVividDatepickerElement>;
             "vivid-grid": LocalJSX.VividGrid & JSXBase.HTMLAttributes<HTMLVividGridElement>;
             "vivid-grid-item": LocalJSX.VividGridItem & JSXBase.HTMLAttributes<HTMLVividGridItemElement>;

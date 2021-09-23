@@ -1,0 +1,15 @@
+@import '../../global/view-breakpoints.css';
+
+:host {
+  --container-background: hsl(0, 100%, 100%);
+  --container-padding: 0;
+
+  display: block;
+}
+
+#main-container {
+  max-width: var(--content-max-width);
+  margin: auto;
+  background: var(--container-background);
+  padding: var(--container-padding);
+}
