@@ -153,6 +153,29 @@
           <label>My Label</label>
         </s-input>
       </div>
+      <div id="overlay">
+        <h2>Overlay</h2>
+        <s-overlay id="overlay-element">
+          <div style="width: 300px; height: 150px;">
+            <h1>This is a overlay</h1>
+            <p>Some content here...</p>
+            <s-button onclick="toggleOverlay()">Toggle Overlay</s-button>
+            <s-toggle>Use Backdrop</s-toggle>
+          </div>
+        </s-overlay>
+        <s-button fill="outline" onclick="toggleOverlay()">Toggle Overlay</s-button>
+        <script>
+          function toggleOverlay() {
+            const overlay = document.querySelector('#overlay-element');
+            overlay.showed = !overlay.showed;
+          }
+          document.querySelector('#overlay-element s-toggle')
+            .addEventListener('sChange', ({ detail }) => {
+              const overlay = document.querySelector('#overlay-element');
+              overlay.useBackdrop = detail;
+            });
+        </script>
+      </div>
       <div id="popover">
         <h2>Popover</h2>
         <s-popover position="50px 50% 0 0 fixed" transform-origin="left">
@@ -163,7 +186,8 @@
           </div>
         </s-popover>
         <s-button fill="outline" onclick="togglePopover()">Toogle Popover</s-button>
-        <script>function togglePopover() {
+        <script>
+          function togglePopover() {
             const popover = document.querySelector('s-popover');
             popover.isHidden = !popover.isHidden;
           }

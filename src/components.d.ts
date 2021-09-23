@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { UIColor } from "./global/ui-color";
+import { OverlayPosition } from "./components/s-overlay/s-overlay";
 export namespace Components {
     interface SBadge {
         "color": UIColor;
@@ -37,6 +38,14 @@ export namespace Components {
     interface SInput {
         "placeholder": string;
         "value": string;
+    }
+    interface SOverlay {
+        "minimizedScale": string;
+        "position": OverlayPosition | string;
+        "showed": boolean;
+        "transformOrigin": string;
+        "useBackdrop": boolean;
+        "zIndex": number;
     }
     interface SPopover {
         "isHidden": boolean;
@@ -116,6 +125,12 @@ declare global {
         prototype: HTMLSInputElement;
         new (): HTMLSInputElement;
     };
+    interface HTMLSOverlayElement extends Components.SOverlay, HTMLStencilElement {
+    }
+    var HTMLSOverlayElement: {
+        prototype: HTMLSOverlayElement;
+        new (): HTMLSOverlayElement;
+    };
     interface HTMLSPopoverElement extends Components.SPopover, HTMLStencilElement {
     }
     var HTMLSPopoverElement: {
@@ -161,6 +176,7 @@ declare global {
         "s-grid": HTMLSGridElement;
         "s-grid-item": HTMLSGridItemElement;
         "s-input": HTMLSInputElement;
+        "s-overlay": HTMLSOverlayElement;
         "s-popover": HTMLSPopoverElement;
         "s-range": HTMLSRangeElement;
         "s-select": HTMLSSelectElement;
@@ -203,6 +219,14 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "value"?: string;
     }
+    interface SOverlay {
+        "minimizedScale"?: string;
+        "position"?: OverlayPosition | string;
+        "showed"?: boolean;
+        "transformOrigin"?: string;
+        "useBackdrop"?: boolean;
+        "zIndex"?: number;
+    }
     interface SPopover {
         "isHidden"?: boolean;
         "position"?: { x?: string, y?: string, offsetX?: string, offsetY?: string } | string;
@@ -244,6 +268,7 @@ declare namespace LocalJSX {
         "s-grid": SGrid;
         "s-grid-item": SGridItem;
         "s-input": SInput;
+        "s-overlay": SOverlay;
         "s-popover": SPopover;
         "s-range": SRange;
         "s-select": SSelect;
@@ -264,6 +289,7 @@ declare module "@stencil/core" {
             "s-grid": LocalJSX.SGrid & JSXBase.HTMLAttributes<HTMLSGridElement>;
             "s-grid-item": LocalJSX.SGridItem & JSXBase.HTMLAttributes<HTMLSGridItemElement>;
             "s-input": LocalJSX.SInput & JSXBase.HTMLAttributes<HTMLSInputElement>;
+            "s-overlay": LocalJSX.SOverlay & JSXBase.HTMLAttributes<HTMLSOverlayElement>;
             "s-popover": LocalJSX.SPopover & JSXBase.HTMLAttributes<HTMLSPopoverElement>;
             "s-range": LocalJSX.SRange & JSXBase.HTMLAttributes<HTMLSRangeElement>;
             "s-select": LocalJSX.SSelect & JSXBase.HTMLAttributes<HTMLSSelectElement>;
