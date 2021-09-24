@@ -26,7 +26,7 @@ export class VividOverlay implements ComponentInterface {
   showedChanged(showed: boolean, previousValue?: boolean) {
     if (showed) {
       this.originalParent = this.hostElement.parentElement;
-      const attachingContainer = document.querySelector('vivid-ui') || document.querySelector('body');
+      const attachingContainer = document.querySelector('vivid-provider') || document.querySelector('body');
       attachingContainer.appendChild(this.hostElement);
       this.status = 'minimized';
       setTimeout(() => {

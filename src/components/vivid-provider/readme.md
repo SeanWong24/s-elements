@@ -1,4 +1,4 @@
-# vivid-ui
+# vivid-provider
 
 
 

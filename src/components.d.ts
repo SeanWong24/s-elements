@@ -50,6 +50,8 @@ export namespace Components {
         "useBackdrop": boolean;
         "zIndex": number;
     }
+    interface VividProvider {
+    }
     interface VividRange {
         "max": number;
         "min": number;
@@ -71,8 +73,6 @@ export namespace Components {
         "checked": boolean;
         "color": UIColor;
         "scale": number;
-    }
-    interface VividUi {
     }
 }
 declare global {
@@ -136,6 +136,12 @@ declare global {
         prototype: HTMLVividOverlayElement;
         new (): HTMLVividOverlayElement;
     };
+    interface HTMLVividProviderElement extends Components.VividProvider, HTMLStencilElement {
+    }
+    var HTMLVividProviderElement: {
+        prototype: HTMLVividProviderElement;
+        new (): HTMLVividProviderElement;
+    };
     interface HTMLVividRangeElement extends Components.VividRange, HTMLStencilElement {
     }
     var HTMLVividRangeElement: {
@@ -160,12 +166,6 @@ declare global {
         prototype: HTMLVividToggleElement;
         new (): HTMLVividToggleElement;
     };
-    interface HTMLVividUiElement extends Components.VividUi, HTMLStencilElement {
-    }
-    var HTMLVividUiElement: {
-        prototype: HTMLVividUiElement;
-        new (): HTMLVividUiElement;
-    };
     interface HTMLElementTagNameMap {
         "vivid-badge": HTMLVividBadgeElement;
         "vivid-button": HTMLVividButtonElement;
@@ -177,11 +177,11 @@ declare global {
         "vivid-grid-item": HTMLVividGridItemElement;
         "vivid-input": HTMLVividInputElement;
         "vivid-overlay": HTMLVividOverlayElement;
+        "vivid-provider": HTMLVividProviderElement;
         "vivid-range": HTMLVividRangeElement;
         "vivid-select": HTMLVividSelectElement;
         "vivid-select-option": HTMLVividSelectOptionElement;
         "vivid-toggle": HTMLVividToggleElement;
-        "vivid-ui": HTMLVividUiElement;
     }
 }
 declare namespace LocalJSX {
@@ -228,6 +228,8 @@ declare namespace LocalJSX {
         "useBackdrop"?: boolean;
         "zIndex"?: number;
     }
+    interface VividProvider {
+    }
     interface VividRange {
         "max"?: number;
         "min"?: number;
@@ -254,8 +256,6 @@ declare namespace LocalJSX {
         "onSChange"?: (event: CustomEvent<boolean>) => void;
         "scale"?: number;
     }
-    interface VividUi {
-    }
     interface IntrinsicElements {
         "vivid-badge": VividBadge;
         "vivid-button": VividButton;
@@ -267,11 +267,11 @@ declare namespace LocalJSX {
         "vivid-grid-item": VividGridItem;
         "vivid-input": VividInput;
         "vivid-overlay": VividOverlay;
+        "vivid-provider": VividProvider;
         "vivid-range": VividRange;
         "vivid-select": VividSelect;
         "vivid-select-option": VividSelectOption;
         "vivid-toggle": VividToggle;
-        "vivid-ui": VividUi;
     }
 }
 export { LocalJSX as JSX };
@@ -288,11 +288,11 @@ declare module "@stencil/core" {
             "vivid-grid-item": LocalJSX.VividGridItem & JSXBase.HTMLAttributes<HTMLVividGridItemElement>;
             "vivid-input": LocalJSX.VividInput & JSXBase.HTMLAttributes<HTMLVividInputElement>;
             "vivid-overlay": LocalJSX.VividOverlay & JSXBase.HTMLAttributes<HTMLVividOverlayElement>;
+            "vivid-provider": LocalJSX.VividProvider & JSXBase.HTMLAttributes<HTMLVividProviderElement>;
             "vivid-range": LocalJSX.VividRange & JSXBase.HTMLAttributes<HTMLVividRangeElement>;
             "vivid-select": LocalJSX.VividSelect & JSXBase.HTMLAttributes<HTMLVividSelectElement>;
             "vivid-select-option": LocalJSX.VividSelectOption & JSXBase.HTMLAttributes<HTMLVividSelectOptionElement>;
             "vivid-toggle": LocalJSX.VividToggle & JSXBase.HTMLAttributes<HTMLVividToggleElement>;
-            "vivid-ui": LocalJSX.VividUi & JSXBase.HTMLAttributes<HTMLVividUiElement>;
         }
     }
 }
