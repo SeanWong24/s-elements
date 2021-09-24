@@ -1,0 +1,4 @@
+:host {
+  box-sizing: border-box;
+  width: calc(var(--fraction) / var(--base-column-count) * 100%);
+}
