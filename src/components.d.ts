@@ -58,6 +58,10 @@ export namespace Components {
         "step": number | '' | 'any';
         "value": number;
     }
+    interface VividRatioBox {
+        "heightRatio": number;
+        "widthRatio": number;
+    }
     interface VividSelect {
         "color": UIColor;
         "placeholder": string;
@@ -148,6 +152,12 @@ declare global {
         prototype: HTMLVividRangeElement;
         new (): HTMLVividRangeElement;
     };
+    interface HTMLVividRatioBoxElement extends Components.VividRatioBox, HTMLStencilElement {
+    }
+    var HTMLVividRatioBoxElement: {
+        prototype: HTMLVividRatioBoxElement;
+        new (): HTMLVividRatioBoxElement;
+    };
     interface HTMLVividSelectElement extends Components.VividSelect, HTMLStencilElement {
     }
     var HTMLVividSelectElement: {
@@ -179,6 +189,7 @@ declare global {
         "vivid-overlay": HTMLVividOverlayElement;
         "vivid-provider": HTMLVividProviderElement;
         "vivid-range": HTMLVividRangeElement;
+        "vivid-ratio-box": HTMLVividRatioBoxElement;
         "vivid-select": HTMLVividSelectElement;
         "vivid-select-option": HTMLVividSelectOptionElement;
         "vivid-toggle": HTMLVividToggleElement;
@@ -238,6 +249,10 @@ declare namespace LocalJSX {
         "step"?: number | '' | 'any';
         "value"?: number;
     }
+    interface VividRatioBox {
+        "heightRatio"?: number;
+        "widthRatio"?: number;
+    }
     interface VividSelect {
         "color"?: UIColor;
         "onSChange"?: (event: CustomEvent<string>) => void;
@@ -269,6 +284,7 @@ declare namespace LocalJSX {
         "vivid-overlay": VividOverlay;
         "vivid-provider": VividProvider;
         "vivid-range": VividRange;
+        "vivid-ratio-box": VividRatioBox;
         "vivid-select": VividSelect;
         "vivid-select-option": VividSelectOption;
         "vivid-toggle": VividToggle;
@@ -290,6 +306,7 @@ declare module "@stencil/core" {
             "vivid-overlay": LocalJSX.VividOverlay & JSXBase.HTMLAttributes<HTMLVividOverlayElement>;
             "vivid-provider": LocalJSX.VividProvider & JSXBase.HTMLAttributes<HTMLVividProviderElement>;
             "vivid-range": LocalJSX.VividRange & JSXBase.HTMLAttributes<HTMLVividRangeElement>;
+            "vivid-ratio-box": LocalJSX.VividRatioBox & JSXBase.HTMLAttributes<HTMLVividRatioBoxElement>;
             "vivid-select": LocalJSX.VividSelect & JSXBase.HTMLAttributes<HTMLVividSelectElement>;
             "vivid-select-option": LocalJSX.VividSelectOption & JSXBase.HTMLAttributes<HTMLVividSelectOptionElement>;
             "vivid-toggle": LocalJSX.VividToggle & JSXBase.HTMLAttributes<HTMLVividToggleElement>;
