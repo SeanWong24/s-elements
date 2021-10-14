@@ -1,7 +1,7 @@
 @import '../../global/view-breakpoints.css';
 
 :host {
-  --container-background: hsl(0, 100%, 100%);
+  --container-background: none;
   --container-padding: 0;
 
   display: block;
