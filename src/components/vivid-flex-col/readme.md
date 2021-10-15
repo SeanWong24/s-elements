@@ -13,7 +13,7 @@
 | `md`     | `md`      |             | `number` | `undefined` |
 | `sm`     | `sm`      |             | `number` | `undefined` |
 | `xl`     | `xl`      |             | `number` | `undefined` |
-| `xs`     | `xs`      |             | `number` | `12`        |
+| `xs`     | `xs`      |             | `number` | `undefined` |
 | `xxl`    | `xxl`     |             | `number` | `undefined` |
 
 

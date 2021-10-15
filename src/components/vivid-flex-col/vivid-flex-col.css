@@ -1,5 +1,5 @@
 :host {
   box-sizing: border-box;
   display: flex;
-  width: calc(var(--fraction) / var(--base-column-count) * 100%);
+  flex: var(--flex);
 }
