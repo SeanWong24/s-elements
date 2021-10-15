@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `lg`     | `lg`      |             | `number` | `undefined` |
-| `md`     | `md`      |             | `number` | `undefined` |
-| `sm`     | `sm`      |             | `number` | `undefined` |
-| `xl`     | `xl`      |             | `number` | `undefined` |
-| `xs`     | `xs`      |             | `number` | `undefined` |
-| `xxl`    | `xxl`     |             | `number` | `undefined` |
+| Property | Attribute | Description | Type               | Default     |
+| -------- | --------- | ----------- | ------------------ | ----------- |
+| `lg`     | `lg`      |             | `"auto" \| number` | `undefined` |
+| `md`     | `md`      |             | `"auto" \| number` | `undefined` |
+| `sm`     | `sm`      |             | `"auto" \| number` | `undefined` |
+| `xl`     | `xl`      |             | `"auto" \| number` | `undefined` |
+| `xs`     | `xs`      |             | `"auto" \| number` | `undefined` |
+| `xxl`    | `xxl`     |             | `"auto" \| number` | `undefined` |
 
 
 ## Methods

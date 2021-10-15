@@ -27,13 +27,13 @@ export namespace Components {
         "value": Date;
     }
     interface VividFlexCol {
-        "lg": number;
-        "md": number;
+        "lg": number | 'auto';
+        "md": number | 'auto';
         "rowWidthChanged": (width: number) => Promise<void>;
-        "sm": number;
-        "xl": number;
-        "xs": number;
-        "xxl": number;
+        "sm": number | 'auto';
+        "xl": number | 'auto';
+        "xs": number | 'auto';
+        "xxl": number | 'auto';
     }
     interface VividFlexGrid {
         "baseColumnCount": number;
@@ -249,12 +249,12 @@ declare namespace LocalJSX {
         "value"?: Date;
     }
     interface VividFlexCol {
-        "lg"?: number;
-        "md"?: number;
-        "sm"?: number;
-        "xl"?: number;
-        "xs"?: number;
-        "xxl"?: number;
+        "lg"?: number | 'auto';
+        "md"?: number | 'auto';
+        "sm"?: number | 'auto';
+        "xl"?: number | 'auto';
+        "xs"?: number | 'auto';
+        "xxl"?: number | 'auto';
     }
     interface VividFlexGrid {
         "baseColumnCount"?: number;

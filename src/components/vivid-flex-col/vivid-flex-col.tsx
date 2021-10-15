@@ -8,15 +8,9 @@ import { updateCSSVariable } from '../../utils/access-css-variable';
 })
 export class VividFlexCol implements ComponentInterface {
 
-  private set fraction(value: number) {
+  private set fraction(value: number | 'auto') {
     updateCSSVariable('--fraction', value.toString(), this.hostElement);
-    updateCSSVariable(
-      '--flex',
-      value ?
-        '0 0 calc(var(--fraction) / var(--base-column-count) * 100%)' :
-        '1 1 auto',
-      this.hostElement
-    );
+    this.updateFlexCSSVariable(value);
   }
 
   private get actualXs() {
@@ -45,12 +39,12 @@ export class VividFlexCol implements ComponentInterface {
 
   @Element() hostElement: HTMLVividFlexColElement;
 
-  @Prop({ reflect: true }) xs: number;
-  @Prop({ reflect: true }) sm: number;
-  @Prop({ reflect: true }) md: number;
-  @Prop({ reflect: true }) lg: number;
-  @Prop({ reflect: true }) xl: number;
-  @Prop({ reflect: true }) xxl: number;
+  @Prop({ reflect: true }) xs: number | 'auto';
+  @Prop({ reflect: true }) sm: number | 'auto';
+  @Prop({ reflect: true }) md: number | 'auto';
+  @Prop({ reflect: true }) lg: number | 'auto';
+  @Prop({ reflect: true }) xl: number | 'auto';
+  @Prop({ reflect: true }) xxl: number | 'auto';
 
   @Method()
   async rowWidthChanged(width: number) {
@@ -89,6 +83,20 @@ export class VividFlexCol implements ComponentInterface {
 
   private getWrappedViewBreakpoint(name: string) {
     return +getComputedStyle(this.hostElement).getPropertyValue(`--wrapped-${name}`);
+  }
+
+  private updateFlexCSSVariable(value: string | number) {
+    switch (true) {
+      case !Number.isNaN(+value):
+        updateCSSVariable('--flex', '0 0 calc(var(--fraction) / var(--base-column-count) * 100%)', this.hostElement);
+        break;
+      case value === 'auto':
+        updateCSSVariable('--flex', '0 0 auto', this.hostElement);
+        break;
+      default:
+        updateCSSVariable('--flex', '1 1 auto', this.hostElement);
+        break;
+    }
   }
 
 }
