@@ -30,9 +30,9 @@ export namespace Components {
         "baseFraction": number;
     }
     interface VividFlexItem {
+        "containerSizeChanged": (size: number) => Promise<void>;
         "lg": number | 'auto';
         "md": number | 'auto';
-        "rowWidthChanged": (width: number) => Promise<void>;
         "sm": number | 'auto';
         "xl": number | 'auto';
         "xs": number | 'auto';

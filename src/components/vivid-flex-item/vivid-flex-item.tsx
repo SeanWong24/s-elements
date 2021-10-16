@@ -47,21 +47,21 @@ export class VividFlexItem implements ComponentInterface {
   @Prop({ reflect: true }) xxl: number | 'auto';
 
   @Method()
-  async rowWidthChanged(width: number) {
+  async containerSizeChanged(size: number) {
     switch (true) {
-      case (width >= this.getWrappedViewBreakpoint('xxl')):
+      case (size >= this.getWrappedViewBreakpoint('xxl')):
         this.fraction = this.actualXxl;
         break;
-      case (width >= this.getWrappedViewBreakpoint('xl')):
+      case (size >= this.getWrappedViewBreakpoint('xl')):
         this.fraction = this.actualXl;
         break;
-      case (width >= this.getWrappedViewBreakpoint('lg')):
+      case (size >= this.getWrappedViewBreakpoint('lg')):
         this.fraction = this.actualLg;
         break;
-      case (width >= this.getWrappedViewBreakpoint('md')):
+      case (size >= this.getWrappedViewBreakpoint('md')):
         this.fraction = this.actualMd;
         break;
-      case (width >= this.getWrappedViewBreakpoint('sm')):
+      case (size >= this.getWrappedViewBreakpoint('sm')):
         this.fraction = this.actualSm;
         break;
       default:

@@ -41,7 +41,8 @@ export class VividFlex implements ComponentInterface {
 
   private notifySizeChangeToItemElements(entry: ResizeObserverEntry) {
     const width = entry.contentRect.width;
-    this.hostElement.querySelectorAll(this.FLEX_ITEM_TAG_NAME).forEach(colElement => colElement.rowWidthChanged(width));
+    this.hostElement.querySelectorAll(this.FLEX_ITEM_TAG_NAME)
+      .forEach(colElement => colElement.containerSizeChanged(width));
   }
 
 }
