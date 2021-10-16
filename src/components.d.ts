@@ -26,6 +26,9 @@ export namespace Components {
     interface VividDatepicker {
         "value": Date;
     }
+    interface VividFlex {
+        "baseFraction": number;
+    }
     interface VividFlexCol {
         "lg": number | 'auto';
         "md": number | 'auto';
@@ -37,6 +40,15 @@ export namespace Components {
     }
     interface VividFlexGrid {
         "baseColumnCount": number;
+    }
+    interface VividFlexItem {
+        "lg": number | 'auto';
+        "md": number | 'auto';
+        "rowWidthChanged": (width: number) => Promise<void>;
+        "sm": number | 'auto';
+        "xl": number | 'auto';
+        "xs": number | 'auto';
+        "xxl": number | 'auto';
     }
     interface VividFlexRow {
     }
@@ -130,6 +142,12 @@ declare global {
         prototype: HTMLVividDatepickerElement;
         new (): HTMLVividDatepickerElement;
     };
+    interface HTMLVividFlexElement extends Components.VividFlex, HTMLStencilElement {
+    }
+    var HTMLVividFlexElement: {
+        prototype: HTMLVividFlexElement;
+        new (): HTMLVividFlexElement;
+    };
     interface HTMLVividFlexColElement extends Components.VividFlexCol, HTMLStencilElement {
     }
     var HTMLVividFlexColElement: {
@@ -141,6 +159,12 @@ declare global {
     var HTMLVividFlexGridElement: {
         prototype: HTMLVividFlexGridElement;
         new (): HTMLVividFlexGridElement;
+    };
+    interface HTMLVividFlexItemElement extends Components.VividFlexItem, HTMLStencilElement {
+    }
+    var HTMLVividFlexItemElement: {
+        prototype: HTMLVividFlexItemElement;
+        new (): HTMLVividFlexItemElement;
     };
     interface HTMLVividFlexRowElement extends Components.VividFlexRow, HTMLStencilElement {
     }
@@ -215,8 +239,10 @@ declare global {
         "vivid-collapse": HTMLVividCollapseElement;
         "vivid-container": HTMLVividContainerElement;
         "vivid-datepicker": HTMLVividDatepickerElement;
+        "vivid-flex": HTMLVividFlexElement;
         "vivid-flex-col": HTMLVividFlexColElement;
         "vivid-flex-grid": HTMLVividFlexGridElement;
+        "vivid-flex-item": HTMLVividFlexItemElement;
         "vivid-flex-row": HTMLVividFlexRowElement;
         "vivid-grid": HTMLVividGridElement;
         "vivid-grid-item": HTMLVividGridItemElement;
@@ -248,6 +274,9 @@ declare namespace LocalJSX {
     interface VividDatepicker {
         "value"?: Date;
     }
+    interface VividFlex {
+        "baseFraction"?: number;
+    }
     interface VividFlexCol {
         "lg"?: number | 'auto';
         "md"?: number | 'auto';
@@ -258,6 +287,14 @@ declare namespace LocalJSX {
     }
     interface VividFlexGrid {
         "baseColumnCount"?: number;
+    }
+    interface VividFlexItem {
+        "lg"?: number | 'auto';
+        "md"?: number | 'auto';
+        "sm"?: number | 'auto';
+        "xl"?: number | 'auto';
+        "xs"?: number | 'auto';
+        "xxl"?: number | 'auto';
     }
     interface VividFlexRow {
     }
@@ -326,8 +363,10 @@ declare namespace LocalJSX {
         "vivid-collapse": VividCollapse;
         "vivid-container": VividContainer;
         "vivid-datepicker": VividDatepicker;
+        "vivid-flex": VividFlex;
         "vivid-flex-col": VividFlexCol;
         "vivid-flex-grid": VividFlexGrid;
+        "vivid-flex-item": VividFlexItem;
         "vivid-flex-row": VividFlexRow;
         "vivid-grid": VividGrid;
         "vivid-grid-item": VividGridItem;
@@ -351,8 +390,10 @@ declare module "@stencil/core" {
             "vivid-collapse": LocalJSX.VividCollapse & JSXBase.HTMLAttributes<HTMLVividCollapseElement>;
             "vivid-container": LocalJSX.VividContainer & JSXBase.HTMLAttributes<HTMLVividContainerElement>;
             "vivid-datepicker": LocalJSX.VividDatepicker & JSXBase.HTMLAttributes<HTMLVividDatepickerElement>;
+            "vivid-flex": LocalJSX.VividFlex & JSXBase.HTMLAttributes<HTMLVividFlexElement>;
             "vivid-flex-col": LocalJSX.VividFlexCol & JSXBase.HTMLAttributes<HTMLVividFlexColElement>;
             "vivid-flex-grid": LocalJSX.VividFlexGrid & JSXBase.HTMLAttributes<HTMLVividFlexGridElement>;
+            "vivid-flex-item": LocalJSX.VividFlexItem & JSXBase.HTMLAttributes<HTMLVividFlexItemElement>;
             "vivid-flex-row": LocalJSX.VividFlexRow & JSXBase.HTMLAttributes<HTMLVividFlexRowElement>;
             "vivid-grid": LocalJSX.VividGrid & JSXBase.HTMLAttributes<HTMLVividGridElement>;
             "vivid-grid-item": LocalJSX.VividGridItem & JSXBase.HTMLAttributes<HTMLVividGridItemElement>;

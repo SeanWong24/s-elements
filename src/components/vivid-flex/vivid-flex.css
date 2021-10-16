@@ -1,0 +1,8 @@
+@import '../../global/view-breakpoints.css';
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
