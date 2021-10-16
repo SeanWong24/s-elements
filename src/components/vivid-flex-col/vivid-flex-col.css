@@ -1,5 +1,0 @@
-:host {
-  box-sizing: border-box;
-  display: flex;
-  flex: var(--flex);
-}
